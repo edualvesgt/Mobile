@@ -9,18 +9,21 @@ export default function App() {
       <Video
         source={require('./assets/stars.mp4')} // Substitua pelo caminho do seu vídeo
         style={styles.videoBackground}
+        rate={1.0}
+        isMuted={true}
+        resizeMode="cover"
         shouldPlay
-        isLooping
+        isLooping 
       />
-      <View style={styles.overlay}>
+      <View style={styles.overPlay}>
         <Text style={styles.title}>Login</Text>
         <View style={styles.inputContainer}>
           <Text style={styles.label}>Email:</Text>
-          <TextInput style={styles.input} placeholder="Digite seu email" />
+          <TextInput style={styles.input} defaultValue ="Digite seu email" />
         </View>
         <View style={styles.inputContainer}>
           <Text style={styles.label}>Senha:</Text>
-          <TextInput style={styles.input} placeholder="Digite sua senha" secureTextEntry />
+          <TextInput style={styles.input} defaultValue='Senha'secureTextEntry/>
         </View>
         <TouchableOpacity style={styles.loginButton}>
           <Text style={styles.buttonText}>Login</Text>
@@ -37,15 +40,14 @@ const styles = StyleSheet.create({
   },
   videoBackground: {
     flex: 1,
-    resizeMode: 'cover',
     position: 'absolute',
     width: '100%',
     height: '100%',
   },
-  overlay: {
+  overPlay: {
     flex: 1,
     backgroundColor: 'rgba(0, 0, 0, 0.5)', // Overlay para escurecer o vídeo
-    padding: 20,
+    padding: 0,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -65,14 +67,16 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    borderColor: '#fff',
+    width: 300,
+    borderColor: '#CCA9DD',
     borderWidth: 1,
     borderRadius: 5,
     paddingLeft: 10,
     color: '#fff',
   },
   loginButton: {
-    backgroundColor: '#8a2be2', // Cor predominante roxa
+    backgroundColor: 'rgba(204, 169, 221, 0.5)', // Cor predominante roxa
+    width:150,
     padding: 10,
     borderRadius: 5,
     marginTop: 20,
