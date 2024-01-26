@@ -3,6 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { Video } from 'expo-av';
 
+
 export default function App() {
   return (
     <View style={styles.container}>
@@ -52,6 +53,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
+    
     fontSize: 24,
     fontWeight: 'bold',
     color: '#fff',

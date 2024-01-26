@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "props",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
@@ -9,14 +9,10 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@expo-google-fonts/baloo-2": "^0.2.3",
     "expo": "~50.0.3",
-    "expo-av": "~13.10.4",
-    "expo-font": "~11.10.2",
     "expo-status-bar": "~1.11.1",
     "react": "18.2.0",
-    "react-native": "0.73.2",
-    "undefined": "@expo-google-fonts/Baloo+2"
+    "react-native": "0.73.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
