@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react';
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import { Container } from './src/components/Container/Container';
+import { Title } from './src/components/Title/Title';
+import { Button, Button_Text } from './src/components/Button/Button';
+
+// Importando o hook useFonts e a fonte SingleDay_400Regular do pacote @expo-google-fonts/single-day
+import { useFonts, SingleDay_400Regular } from '@expo-google-fonts/single-day';
 
 
 export default function App() {
@@ -21,45 +26,35 @@ export default function App() {
     console.log(console.warn(`Contador Atualizado: ${count}`));
   }, [count])
 
+  // Carregando a fonte SingleDay_400Regular usando o hook useFonts
+  let [fontsLoaded, fontError] = useFonts({
+    SingleDay_400Regular,
+  });
+
+  // Verificando se as fontes foram carregadas com sucesso, caso contrário, retorna null
+  if (!fontsLoaded && !fontError) {
+    return null;
+  }
 
   return (
     <Container>
       <SafeAreaView>
 
-        <Text style = {styles.text}>Contador : {count} </Text>
+        <Title>Contador : {count} </Title>
 
-        <TouchableOpacity style={styles.button} onPress={Increment}>
-          <Text style={styles.button_text}>Increment</Text>
-        </TouchableOpacity>
+        <Button onPress={Increment}>
+          <Button_Text>Increment</Button_Text>
+        </Button>
 
-        <TouchableOpacity style={styles.button} onPress={Decrement}>
-          <Text style={styles.button_text}>Decrement</Text>
-        </TouchableOpacity>
+        <Button onPress={Decrement}>
+          <Button_Text>Decrement</Button_Text>
+        </Button>
 
       </SafeAreaView>
 
-      </Container>
+
+    </Container>
   );
 }
 
-const styles = StyleSheet.create({
- 
-  text:{
-    color: "white"
-  },
-  button:{
-    width:100,
-    height:50,
-    backgroundColor: '#e0e0e0',
-    borderRadius: 5,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor:"#c8a2c8",
 
-    marginTop:15
-  },
-  button_text:{
-    fontSize: 15,
-    fontWeight: 'bold'
-  }
-});
