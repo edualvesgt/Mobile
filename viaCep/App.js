@@ -1,7 +1,6 @@
 import { useFonts, Roboto_500Medium, Roboto_700Bold } from '@expo-google-fonts/roboto';
 import { Header } from './src/Components/Header/Header';
-import { ContainerApp } from './styles';
-import { ScrollView } from 'react-native';
+import { ContainerApp } from './Styles';
 import { Home } from './src/Screens/Home/Home';
 
 export default function App() {
