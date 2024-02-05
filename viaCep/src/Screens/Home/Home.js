@@ -1,54 +1,91 @@
-import { View } from "react-native";
+import { useEffect, useState } from "react";
 import { BoxInput } from "../../Components/BoxInput/BoxInput";
 import { ContainerForm, DoubleView, ScrollForm } from "./StyleHome";
+import axios from "axios";
 export function Home() {
     
-    const cep = "08150-580"
-    const logadouro = "Rua padre Vicente de Araujo "
-    const bairro= "Jd Vila Nova Curuca"
-    const cidade = "Sao Paulo"
-    const estado = "Sao Paulo"
-    const uf = "SP"
+    //hooks - states
+    const [cep, setCep] = useState('');
+    const [logradouro, setLogradouro] = useState('');
+    const [bairro, setBairro] = useState('');
+    const [cidade, setCidade] = useState('');
+    const [estado, setEstado] = useState('');
+    const [uf, setUf] = useState('');
+
+
+
+    //hooks - effect
+    useEffect(() => {
+        const search = async () => {
+            if (cep !== "" && cep.length === 8) {
+                try {
+                    const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+                    if (response.data) {
+                        setLogradouro(response.data.logradouro);
+                        setBairro(response.data.bairro);
+                        setCidade(response.data.localidade);
+                        setUf(response.data.uf);
+                        const estado = await axios.get (`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${response.data.uf}`)
+                        setEstado(estado.data.nome);
+                    } else {
+                        alert("verifique o cep");
+                    }
+                } catch (error) {
+                    console.log("erro ao buscar cep", error);
+                }
+            }
+        };
+
+        search();
+    }, [cep]);
 
     return (
-        //ScroolForm
-        //ContainerForm
-        //BoxInput
-        //Label
-        //Input
+       
 
         <ScrollForm>
             <ContainerForm>
                 <BoxInput
                     textLabel={"Informar o CEP :"}
                     placeholder={"Digite o CEP"}
-                    keyTitle="numeric"
-                    maxLength={9}
+                    keyType="numeric"
+                    maxLength={8}   
+                    fieldValue={cep}
+                    editable = {true}
+                    onChangeText={(tx) => {
+                        setCep(tx)
+                    }}
+                    
+
                 />
                 <BoxInput
                     textLabel={"Logadouro"}
                     placeholder={"Logadouro ..."}
+                    fieldValue={logradouro}
 
                 />
                 <BoxInput
                     textLabel={"Bairro :"}
                     placeholder={"Bairro."}
+                    fieldValue={bairro}
 
                 />
                 <BoxInput
                     textLabel={"Cidade :"}
                     placeholder={"Cidade.."}
+                    fieldValue={cidade}
                 />
                 <DoubleView>
                     <BoxInput
                         textLabel={"Estado :"}
                         placeholder={"Estado.."}
                         fieldWidth={60}
+                        fieldValue={estado}
                     />
                     <BoxInput
                         textLabel={"UF:"}
                         placeholder={"UF.."}
                         fieldWidth={28}
+                        fieldValue={uf}
                     />
                 </DoubleView>
 

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const HeaderContainer = styled.View`
-background-color: #FECC2B;
+background-color: #047CD3;
 height:20%;
 border-radius:0px 0px 25px 25px;
 flex-direction: row;
@@ -23,7 +23,7 @@ export const HeaderContent = styled.SafeAreaView`
 margin-top:45px;
 `
 export const TextHeader = styled.Text`
-color: #333E33;
+color: #FECC2B;
 font-size: 24px;
 font-family:"Roboto_500Medium";
 text-align: center;

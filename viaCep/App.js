@@ -13,9 +13,6 @@ export default function App() {
     return null;
   }
 
-  else {
-
-  }
 
   return (
     <ContainerApp>
@@ -24,9 +21,8 @@ export default function App() {
 
       <Home />
 
-      
+
     </ContainerApp>
   );
 }
-
 
