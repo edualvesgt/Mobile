@@ -1,10 +1,13 @@
-import { LinkMedium } from "../../Links/StyleLink"
+import { LinkMedium,  TextLink } from "../../components/Links/StyleLink"
+import { Button, ButtonGoogle, ButtonTitle, ButtonTitleGoogle } from "../../components/Button/Button"
 import { Container } from "../../components/Container/StyleContainer"
+import { ContentAccount } from "../../components/ContentAccount/StyleContentAccount"
 import { Input } from "../../components/Input/StyleInput"
-import { Logo } from "../../components/Logo/StyleLogo"
-import { Title } from "../../components/Title/StyleTitle"
+import { GoogleLogo, Logo } from "../../components/Logo/StyleLogo"
+import { TextAccount } from "../../components/Text/Text"
+import {  Title } from "../../components/Title/StyleTitle"
 
-export const Login = () => {
+export const Login = ({navigation}) => {
 
     return (
         <Container>
@@ -17,20 +20,22 @@ export const Login = () => {
                 placeholder={"Senha"}
                 secureTextEntry={true}
             />
-            <LinkMedium>Esqueceu Sua Senha?</LinkMedium>
-            {/*
+            <LinkMedium onPress={() => navigation.navigate('ForgotPassword')}>Esqueceu Sua Senha?</LinkMedium>
+
 
             <Button>
-                <ButtonTitle></ButtonTitle>
+                <ButtonTitle> Entrar</ButtonTitle>
             </Button>
 
             <ButtonGoogle>
-                <ButtonTitleGoogle></ButtonTitleGoogle>
+                <GoogleLogo source={require('../../assets/GOOGLE.png')} />
+                <ButtonTitleGoogle> Login with Google</ButtonTitleGoogle>
             </ButtonGoogle>
 
+
             <ContentAccount>
-                <TextAccount></TextAccount>
-            </ContentAccount> */}
+                <TextAccount>Não tem conta? <TextLink>Crie uma conta agora!</TextLink> </TextAccount>
+            </ContentAccount>
         </Container>
     )
 
