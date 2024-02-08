@@ -9,6 +9,16 @@ height: 72px;
 text-align: center;
 margin-top: 15px;
 `
+export const TextCreate = styled.Text`
+font-family: "Quicksand_500Medium";
+font-size: 16px;
+color: #5F5C6B;
+width: 90%;
+height: 40px;
+text-align: center;
+margin-top: 15px;
+margin-bottom: 20px;
+`
 export const TextPassword = styled.Text`
 font-family: "Quicksand_500Medium";
 font-size: 16px;

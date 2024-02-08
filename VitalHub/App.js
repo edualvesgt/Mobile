@@ -7,6 +7,8 @@ import { ForgotPassword } from './src/screens/ForgotPassword/ForgotPassword';
 import { Quicksand_500Medium, Quicksand_600SemiBold } from '@expo-google-fonts/quicksand';
 import { VerifyEmail } from './src/screens/VerifyEmail/VerifyEmail';
 import { ChangePassword } from './src/screens/ChangePassword/ChangePassword';
+import { CreateAccount } from './src/screens/CreateAccount/CreateAccount';
+import { Profile } from './src/screens/Profile/Profile';
 
 
 const Stack = createNativeStackNavigator();
@@ -47,20 +49,31 @@ export default function App() {
         />
 
         <Stack.Screen
+          name='VerifyEmail'
+          component={VerifyEmail}
+          options={{ title: "VerifyEmail" }}
+        />
+        <Stack.Screen
+          name='Profile'
+          component={Profile}
+          options={{ title: "Profile" }}
+        />
+
+        <Stack.Screen
           name='ForgotPassword'
           component={ForgotPassword}
           options={{ title: "ForgotPassword" }}
         />
+        <Stack.Screen
+          name='CreateAccount'
+          component={CreateAccount}
+          options={{ title: "CreateAccount" }}
+        />
 
         <Stack.Screen
-          name='VerifyEmail'
+          name='ChangePassword'
           component={ChangePassword}
           options={{ title: "ChangePassword" }}
-        />
-        <Stack.Screen
-          name='ChangePassword'
-          component={VerifyEmail}
-          options={{ title: "VerifyEmail" }}
         />
       </Stack.Navigator>
 
