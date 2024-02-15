@@ -13,3 +13,8 @@ export const GoogleLogo = styled.Image`
   height: 20px; */
   margin-right: 27px;
 `
+export const DoctorPhoto = styled.Image`
+  width: 60px;
+  height: 60px; 
+  border-radius: 5px;
+`

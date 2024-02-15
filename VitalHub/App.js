@@ -9,8 +9,8 @@ import { VerifyEmail } from './src/screens/VerifyEmail/VerifyEmail';
 import { ChangePassword } from './src/screens/ChangePassword/ChangePassword';
 import { CreateAccount } from './src/screens/CreateAccount/CreateAccount';
 import { Profile } from './src/screens/Profile/Profile';
-import { StatusBar } from 'react-native';
 import { FormDoctor } from './src/screens/FormDoctor/FormDoctor';
+import { Home } from './src/screens/Home/Home';
 
 
 const Stack = createNativeStackNavigator();
@@ -42,7 +42,13 @@ export default function App() {
           component={Navigation}
           // Titulo da Tela
           options={{ title: "Navigation" }}
-        /> */}
+        />  */}
+
+        <Stack.Screen
+          name='Home'
+          component={Home}
+          options={{ title: "Home" }}
+        />
 
         <Stack.Screen
           name='FormDoctor'
@@ -68,9 +74,6 @@ export default function App() {
           options={{ title: "VerifyEmail" }}
         />
 
-
-
-
         <Stack.Screen
           name='ForgotPassword'
           component={ForgotPassword}
@@ -87,8 +90,6 @@ export default function App() {
           component={ChangePassword}
           options={{ title: "ChangePassword" }}
         />
-
-
 
       </Stack.Navigator>
 

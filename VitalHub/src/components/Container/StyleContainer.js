@@ -20,11 +20,9 @@ justify-content:space-evenly;
 align-items: center;
 `
 export const InputContainer = styled.View`
-
-margin-left: 25px;
-display: flex;
+margin: 0px 15px;
 gap:10px;
-align-items: flex-start;
+align-items: center;
 `
 export const ContainerForm = styled.View`
 width: 110%;
