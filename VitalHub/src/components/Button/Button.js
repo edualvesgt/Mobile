@@ -50,3 +50,40 @@ margin-left: 20px;
 align-self: flex-start;
 `
 
+
+export const WhiteButton = styled.TouchableHighlight`
+    width: 110px;
+    height: 40px;
+
+    border: 2px solid #607EC5;
+    border-radius: 5px;
+
+    display:flex;
+    justify-content: center;
+    align-items:center;
+`
+
+export const BlueButton = styled.TouchableHighlight`
+    width: 110px;
+    height: 40px;
+
+    background-color: #607EC5;
+    border-radius: 5px;
+
+    display:flex;
+    justify-content: center;
+    align-items:center;
+
+`
+
+export const WhiteButtonTitle = styled.Text`
+color:#607EC5;
+font-size: 12px;
+font-family: "MontserratAlternates_600SemiBold";
+`
+
+export const BlueButtonTitle  = styled.Text`
+color:#ffffff;
+font-size: 12px;
+font-family: "MontserratAlternates_600SemiBold";
+`

@@ -30,3 +30,10 @@ margin-top: 320px;
 align-items: center;
 
 `
+
+export const RowContainer = styled.View`
+display: flex;
+flex-direction:row;
+gap:10px;
+margin-top: 40px;
+`
