@@ -35,3 +35,24 @@ font-size: 14px;
 color: #4E4B59;
 font-family: "MontserratAlternates_600SemiBold";
 `
+
+export const TextCardGreen = styled.Text`
+color: green;
+font-size: 14px;
+font-family: "Quicksand_600SemiBold";
+`
+export const TextCardGray = styled.Text`
+color: gray;
+font-size: 14px;
+font-family: "Quicksand_600SemiBold";
+`
+export const TextRed = styled.Text`
+font-size: 12px;
+font-family: "MontserratAlternates_500Medium";
+color: #C81D25;
+`
+export const TextBlue =styled.Text`
+font-size: 12px;
+font-family: "MontserratAlternates_500Medium";
+color: #344F8F;
+`

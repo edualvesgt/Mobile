@@ -36,4 +36,9 @@ display: flex;
 flex-direction:row;
 gap:10px;
 margin-top: 40px;
+
+`
+
+export const FlatContainer = styled.FlatList`
+width: 100%;
 `

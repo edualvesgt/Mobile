@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@ant-design/react-native": "^5.0.5",
     "@expo-google-fonts/montserrat": "^0.2.3",
     "@expo-google-fonts/montserrat-alternates": "^0.2.3",
     "@expo-google-fonts/quicksand": "^0.2.3",
