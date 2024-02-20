@@ -35,6 +35,11 @@ font-size: 14px;
 color: #4E4B59;
 font-family: "MontserratAlternates_600SemiBold";
 `
+export const TextAbout = styled.Text`
+font-size: 14px;
+color: #8C8A97;
+font-family: "Quicksand_500Medium";
+`
 
 export const TextCardGreen = styled.Text`
 color: green;

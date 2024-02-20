@@ -1,4 +1,4 @@
-import MaterialIcons from 'react-native-vector-icons'
+import {AntDesign} from '@expo/vector-icons'
 import { TextCardGray, TextCardGreen } from '../Text/Text';
 import { CardGray, CardGreen } from './StyleStatus';
 
@@ -6,7 +6,7 @@ import { CardGray, CardGreen } from './StyleStatus';
 export const StatusGreen = ({time}) => {
     return (
         <CardGreen>
-            <MaterialIcons
+            <AntDesign
                 name="clockcircle"
                 size={14}
                 color={"green"}
@@ -19,8 +19,8 @@ export const StatusGreen = ({time}) => {
 export const StatusGray = ({time}) => {
     return (
         <CardGray>
-             <MaterialIcons
-                name="clock"
+             <AntDesign
+                name="clockcircle"
                 size={14}
                 color={"gray"}
                 />            

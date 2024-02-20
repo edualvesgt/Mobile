@@ -1,62 +1,58 @@
+import { useState } from "react"
 import { Container } from "../Container/StyleContainer"
 import { StatusGray, StatusGreen } from "../Status/Status"
-import { TextAccount, TextBlue, TextRed } from "../Text/Text"
+import { TextAbout, TextAccount, TextBlue, TextRed } from "../Text/Text"
 import { CardBox, ImageCard, RowCardBox, TextCardBox } from "./StyleCard"
+import CancelAppointment from "../CancelAppointment/CancelAppointment"
 
-const Card = ({ image, time, status }) => {
 
+
+const Card = ({ image, time, status, onPressCard }) => {
+
+ 
     const Check = () => {
 
         if (status === "a") {
             return (
                 <RowCardBox>
                     <StatusGreen time={time} />
-
-                    <TextRed>Cancelar</TextRed>
-
+                    <TextRed onPress={onPressCard} >Cancelar</TextRed>
                 </RowCardBox>
             )
-
-           
         } else if (status === "r") {
-
             return (
                 <RowCardBox>
                     <StatusGray time={time} />
-        
                     <TextBlue>Ver Prontuario</TextBlue>
-        
                 </RowCardBox>
-                    )
-        }
-        else if (status === "c") {
+            )
+        } else if (status === "c") {
             return (
                 <RowCardBox>
                     <StatusGray time={time} />
                 </RowCardBox>
-                    )
-            
+            )
         }
-
-
     }
-
 
 
     return (
         <CardBox>
             <ImageCard source={image} />
+
+
             <Container>
 
                 <TextCardBox>
                     <TextAccount>Richard Kosta</TextAccount>
-                    <TextAccount>22. anos</TextAccount>
-
+                    <TextAbout>22 anos  Rotina </TextAbout>
                 </TextCardBox>
 
-
                 {Check()}
+
             </Container>
+
+        
         </CardBox>
     )
 }

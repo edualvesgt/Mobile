@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const CardBox = styled.View`
-border: 0.2px solid whitesmoke;
-background-color: #FFFFFF;
+box-shadow: 0px 10px 20px whitesmoke;
 width: 100%;
 height: 100px;
 padding: 15px;
