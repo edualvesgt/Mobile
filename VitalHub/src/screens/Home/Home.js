@@ -1,29 +1,24 @@
-// Importa o hook useState do React para gerenciar o estado local
 import { useState } from "react";
 
-// Importa o componente ButtonFilter que será usado para filtrar as consultas
+import {FontAwesome} from '@expo/vector-icons'
+
 import { ButtonFilter } from "../../components/ButtonFilter/ButtonFilter";
 
-// Importa o componente Calendar que será usado para exibir um calendário
 import Calendar from "../../components/Calendar/Calendar";
 
-// Importa os componentes Container e RowContainer que serão usados para organizar o layout
 import { Container, FlatContainer, RowContainer } from "../../components/Container/StyleContainer";
 
-// Importa o componente Header que será usado para exibir o cabeçalho da página
 import { Header } from "../../components/Header/Header";
 
-// Importa o componente ScrollForm que será usado para exibir os itens em uma lista rolável
-import { ScrollForm } from "./StyleHome"
+import { ScrollForm, StethoscopeView } from "./StyleHome"
 
 // Importa o componente Card que será usado para exibir os detalhes de cada consulta
 import Card from "../../components/Card/Card";
 import CancelAppointment from "../../components/CancelAppointment/CancelAppointment";
+import ShowFormDoctor from "../../components/ShowFormDoctor/ShowFormDoctor";
 
-// Componente de página inicial
-export const Home = () => {
+export const Home = ({ navigation }) => {
 
-    // Define a imagem que será usada para exibir no perfil do médico
     const image = require("../../assets/PhotoProfile.png");
 
     // Define o estado inicial dos botões selecionados
@@ -77,49 +72,59 @@ export const Home = () => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    console.log(isModalOpen);
     const openModal = () => {
         setIsModalOpen(true);
     };
-    
+
     const closeModal = () => {
         setIsModalOpen(false);
     };;
-    
 
+    const [isShow, setIsShow] = useState(false);
+
+    const showForm = () => {
+        setIsShow(true)
+    }
+    const closeForm = () => {
+        setIsShow(false)
+    }
 
     // Renderiza o componente Header, Container, Calendar, RowContainer, ScrollForm e FlatContainer
     // O componente ButtonFilter é usado para controlar os filtros
     // O componente Card é usado para exibir os detalhes de cada consulta
     return (
         <>
-            {/* Renderiza o componente Header */}
             <Header />
-            {/* Renderiza o componente Container */}
             <Container>
-                {/* Renderiza o componente Calendar */}
                 <Calendar />
-                {/* Renderiza o componente RowContainer */}
                 <RowContainer>
                     {/* Renderiza o componente ButtonFilter para as consultas agendadas */}
-                    <ButtonFilter onPress={() => { setSelected({agendadas: true }) }} selected={selected.agendadas} buttonTitle={'Agendadas'} />
+                    <ButtonFilter onPress={() => { setSelected({ agendadas: true }) }} selected={selected.agendadas} buttonTitle={'Agendadas'} />
                     {/* Renderiza o componente ButtonFilter para as consultas realizadas */}
-                    <ButtonFilter onPress={() => { setSelected({realizadas: true }) }} selected={selected.realizadas} buttonTitle={'Realizadas'} />
+                    <ButtonFilter onPress={() => { setSelected({ realizadas: true }) }} selected={selected.realizadas} buttonTitle={'Realizadas'} />
                     {/* Renderiza o componente ButtonFilter para as consultas canceladas */}
-                    <ButtonFilter onPress={() => { setSelected({canceladas: true }) }} selected={selected.canceladas} buttonTitle={'Canceladas'} />
+                    <ButtonFilter onPress={() => { setSelected({ canceladas: true }) }} selected={selected.canceladas} buttonTitle={'Canceladas'} />
                 </RowContainer>
-                {/* Renderiza o componente ScrollForm */}
                 <ScrollForm>
                     {/* Renderiza o componente FlatContainer que irá renderizar os itens da lista */}
                     <FlatContainer
                         data={data}
-                        renderItem={({ item }) =>  
-                        <Card time={item.time} image={item.image} status={item.status} onPressCard={isModalOpen}/>}
+                        renderItem={({ item }) =>
+                            <Card time={item.time} image={item.image} status={item.status} onPressCard={() => openModal()} onPressShow={() => showForm()} />}
                         keyExtractor={item => item.id} />
+
+                    <StethoscopeView>
+                        <FontAwesome
+                            name="stethoscope"
+                            size={32}
+                            color={"white"}
+                        />
+                    </StethoscopeView>
                 </ScrollForm>
             </Container>
 
-            <CancelAppointment isOpen={true} onClose={closeModal} />
+            <CancelAppointment isOpen={isModalOpen} onClose={closeModal} />
+            <ShowFormDoctor isOpen={isShow} onClose={closeForm} navigation={navigation} />
         </>
     )
 }

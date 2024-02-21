@@ -1,5 +1,5 @@
 import { BoxInputForm } from "../../components/BoxInput/BoxInput"
-import { Button, ButtonTitle } from "../../components/Button/Button"
+import { Button, ButtonForm, ButtonTitle } from "../../components/Button/Button"
 import { Container, ContainerForm, InputContainer } from "../../components/Container/StyleContainer"
 import { HeaderContainer, HeaderPhoto } from "../../components/HeaderPhoto/HeaderPhoto"
 import { LinkCancel } from "../../components/Links/StyleLink"
@@ -7,7 +7,7 @@ import { TextAccount } from "../../components/Text/Text"
 import { Title } from "../../components/Title/StyleTitle"
 import { ScrollForm } from "../Profile/StyleProfile"
 
-export const FormDoctor = ({ navigation }) => {
+export const EditFormDoctor = ({ navigation }) => {
     return (
         <Container>
             <HeaderContainer>
@@ -36,15 +36,10 @@ export const FormDoctor = ({ navigation }) => {
 
 
                     <InputContainer>
-                        {/* <Button>
-                            <ButtonTitle>Salvar</ButtonTitle>
-                        </Button> */}
-
-                        <Button>
-                            <ButtonTitle onPress={() => navigation.navigate('EditFormDoctor')}>Editar</ButtonTitle>
-                        </Button>
-
-                        {/* <LinkCancel >Cancelar</LinkCancel> */}
+                        <ButtonForm >
+                            <ButtonTitle onPress={() => navigation.goBack()}>Salvar</ButtonTitle>
+                        </ButtonForm>
+                        <LinkCancel onPress={() => navigation.goBack()}>Cancelar</LinkCancel>
                     </InputContainer>
 
                     

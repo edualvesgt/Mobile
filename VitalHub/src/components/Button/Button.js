@@ -7,7 +7,14 @@ border-radius: 5px;
 padding: 12px 8px;
 background-color: #496BBA;
 margin-top: 15px;
-
+`
+export const ButtonForm = styled.TouchableOpacity`
+width: 90%;
+height: 44px;
+border-radius: 5px;
+padding: 12px 8px;
+background-color: #496BBA;
+margin-top: 30px;
 `
 
 export const ButtonTitle = styled.Text`

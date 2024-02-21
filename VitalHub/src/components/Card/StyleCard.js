@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const CardBox = styled.View`
-box-shadow: 0px 10px 20px whitesmoke;
-width: 100%;
+box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* Adiciona box-shadow na parte inferior */
+background-color: #FFFFFF;
+width: 98%;
 height: 100px;
 padding: 15px;
 margin-top: 20px;
@@ -23,11 +24,13 @@ border-radius: 5px;
 `
 
 export const TextCardBox = styled.View`
+background-color: #FFFFFF;
 width: 100%;
 display: flex;
 align-items:flex-start;
 gap:3px;
-margin-bottom: 10px;
+padding-bottom: 10px;
+/* margin-bottom: 10px; */
 
 `
 
@@ -36,4 +39,5 @@ width: 100%;
 display:flex;
 flex-direction:row;
 justify-content:space-between;
+background-color: #FFFFFF;
 `

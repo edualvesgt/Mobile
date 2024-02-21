@@ -11,6 +11,7 @@ import { CreateAccount } from './src/screens/CreateAccount/CreateAccount';
 import { Profile } from './src/screens/Profile/Profile';
 import { FormDoctor } from './src/screens/FormDoctor/FormDoctor';
 import { Home } from './src/screens/Home/Home';
+import { EditFormDoctor } from './src/screens/EditFormDoctor/EditFormDoctor';
 
 
 const Stack = createNativeStackNavigator();
@@ -35,14 +36,14 @@ export default function App() {
       {/* Componente de navegacao  */}
       <Stack.Navigator screenOptions={{ headerShown: false }}>
 
-        {/* <Stack.Screen
+         <Stack.Screen
           // Nome da Tela
           name='Navigation'
           // Componente que sera Renderizado
           component={Navigation}
           // Titulo da Tela
           options={{ title: "Navigation" }}
-        />  */}
+        />  
 
         <Stack.Screen
           name='Home'
@@ -89,6 +90,11 @@ export default function App() {
           name='ChangePassword'
           component={ChangePassword}
           options={{ title: "ChangePassword" }}
+        />
+        <Stack.Screen
+          name='EditFormDoctor'
+          component={EditFormDoctor}
+          options={{ title: "EditFormDoctor" }}
         />
 
       </Stack.Navigator>

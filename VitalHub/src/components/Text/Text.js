@@ -55,6 +55,7 @@ export const TextRed = styled.Text`
 font-size: 12px;
 font-family: "MontserratAlternates_500Medium";
 color: #C81D25;
+
 `
 export const TextBlue =styled.Text`
 font-size: 12px;

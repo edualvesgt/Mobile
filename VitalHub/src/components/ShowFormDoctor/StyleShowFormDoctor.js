@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 
-export const ModalContainer = styled.View`
+export const ShowModalContainer = styled.View`
 position: absolute;
 
 width: 100%;
@@ -11,7 +11,7 @@ align-items: center;
 background-color: rgba(0, 0, 0, 0.5);
 `
 
-export const ModalContent = styled.View`
+export const ShowModalContent = styled.View`
 position: fixed;
 
 left: 0;
@@ -22,10 +22,15 @@ background-color: white;
 padding: 20px;
 border-radius: 10px;
 width: 90%;
-height: 310px;
+height: 436px;
 justify-content: center;
 align-items: center;
 `
-
+export const PhotoShow = styled.Image`
+width: 80%;
+height: 181px ;
+border-radius: 10px;
+margin-bottom: 20px;
+`
 
 

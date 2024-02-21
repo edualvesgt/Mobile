@@ -1,30 +1,34 @@
-import { useState } from "react"
-import { Container } from "../Container/StyleContainer"
+import { Container, DoubleView } from "../Container/StyleContainer"
 import { StatusGray, StatusGreen } from "../Status/Status"
 import { TextAbout, TextAccount, TextBlue, TextRed } from "../Text/Text"
 import { CardBox, ImageCard, RowCardBox, TextCardBox } from "./StyleCard"
-import CancelAppointment from "../CancelAppointment/CancelAppointment"
 
 
 
-const Card = ({ image, time, status, onPressCard }) => {
+const Card = ({ image, time, status, onPressCard, onPressShow }) => {
 
- 
+
     const Check = () => {
 
         if (status === "a") {
             return (
                 <RowCardBox>
-                    <StatusGreen time={time} />
-                    <TextRed onPress={onPressCard} >Cancelar</TextRed>
+                    <DoubleView style={{ justifyContent: 'space-between' }}>
+                        <StatusGreen time={time} />
+                        <TextRed onPress={onPressCard} >Cancelar</TextRed>
+                    </DoubleView>
+
                 </RowCardBox>
             )
         } else if (status === "r") {
             return (
-                <RowCardBox>
-                    <StatusGray time={time} />
-                    <TextBlue>Ver Prontuario</TextBlue>
-                </RowCardBox>
+                <DoubleView style={{ justifyContent: 'space-between' }}>
+                    <RowCardBox>
+                        <StatusGray time={time} />
+                        <TextBlue onPress={onPressShow}>Ver Prontuario</TextBlue>
+                    </RowCardBox>
+                </DoubleView>
+
             )
         } else if (status === "c") {
             return (
@@ -52,7 +56,7 @@ const Card = ({ image, time, status, onPressCard }) => {
 
             </Container>
 
-        
+
         </CardBox>
     )
 }
