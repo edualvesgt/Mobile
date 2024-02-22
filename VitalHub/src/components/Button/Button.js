@@ -26,6 +26,15 @@ text-transform: uppercase;
 
 `
 
+export const BlueTitle = styled.Text`
+font-size: 14px;
+font-family: "MontserratAlternates_700Bold";
+color: #34898F;
+text-align: center;
+text-transform: uppercase;
+
+`
+
 
 export const ButtonGoogle = styled.TouchableOpacity`
 width: 90%;
@@ -89,8 +98,19 @@ font-size: 12px;
 font-family: "MontserratAlternates_600SemiBold";
 `
 
-export const BlueButtonTitle  = styled.Text`
+export const BlueButtonTitle = styled.Text`
 color:#ffffff;
 font-size: 12px;
 font-family: "MontserratAlternates_600SemiBold";
 `
+export const SmallButton = styled.TouchableOpacity`
+    width: 30%;
+    height: 55px;
+    padding:16px;
+    font-family: "MontserratAlternates_600SemiBold";
+    border:2px solid ${({ pressed }) => (pressed ? "#34898F" : "#49b3ba")};
+    border-radius: 10px;
+    display: flex;
+    align-items:center;
+    background-color: ${({ pressed }) => (pressed ? "#34898F" : "transparent")};
+`;

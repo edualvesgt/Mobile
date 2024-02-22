@@ -38,6 +38,14 @@ gap:15px;
 margin-top: 40px;
 
 `
+export const RowContainerButton = styled.View`
+width: 90%;
+display: flex;
+flex-direction:row;
+gap:15px;
+margin-top: 10px;
+`
+
 
 export const FlatContainer = styled.FlatList`
 width: 100%;

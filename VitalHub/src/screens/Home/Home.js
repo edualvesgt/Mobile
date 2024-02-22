@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import {FontAwesome} from '@expo/vector-icons'
+import { FontAwesome } from '@expo/vector-icons'
 
 import { ButtonFilter } from "../../components/ButtonFilter/ButtonFilter";
 
@@ -11,11 +11,13 @@ import { Container, FlatContainer, RowContainer } from "../../components/Contain
 import { Header } from "../../components/Header/Header";
 
 import { ScrollForm, StethoscopeView } from "./StyleHome"
-
 // Importa o componente Card que será usado para exibir os detalhes de cada consulta
 import Card from "../../components/Card/Card";
 import CancelAppointment from "../../components/CancelAppointment/CancelAppointment";
 import ShowFormDoctor from "../../components/ShowFormDoctor/ShowFormDoctor";
+import ScheduleAppointment from "../../components/ScheduleAppointment/ScheduleAppointment";
+
+// import ScheduleAppointment from "../../components/ScheduleAppointment/ScheduleAppointment";
 
 export const Home = ({ navigation }) => {
 
@@ -88,6 +90,15 @@ export const Home = ({ navigation }) => {
     const closeForm = () => {
         setIsShow(false)
     }
+    const [isModalSchedule, setModalSchedule] = useState(false);
+
+
+    const showSchedule = () => {
+        setModalSchedule(true) 
+    }
+    const closeSchedule = () => {
+        setModalSchedule(false)
+    }
 
     // Renderiza o componente Header, Container, Calendar, RowContainer, ScrollForm e FlatContainer
     // O componente ButtonFilter é usado para controlar os filtros
@@ -113,17 +124,19 @@ export const Home = ({ navigation }) => {
                             <Card time={item.time} image={item.image} status={item.status} onPressCard={() => openModal()} onPressShow={() => showForm()} />}
                         keyExtractor={item => item.id} />
 
-                    <StethoscopeView>
+                    <StethoscopeView onPress={() => showSchedule()}>
                         <FontAwesome
                             name="stethoscope"
                             size={32}
                             color={"white"}
+
                         />
                     </StethoscopeView>
                 </ScrollForm>
             </Container>
 
             <CancelAppointment isOpen={isModalOpen} onClose={closeModal} />
+            <ScheduleAppointment isOpen={isModalSchedule} onClose={closeSchedule} />
             <ShowFormDoctor isOpen={isShow} onClose={closeForm} navigation={navigation} />
         </>
     )

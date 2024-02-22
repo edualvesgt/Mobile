@@ -22,7 +22,8 @@ export const EditFormDoctor = ({ navigation }) => {
                     <BoxInputForm
                         fieldHeigth={120}
                         textLabel={"Descricao"}
-                        placeholder={"Descricao"} />
+                        placeholder={"Descricao"} 
+                        editable = {true}/>
 
                     <BoxInputForm
                         textLabel={"Diagnostico"}

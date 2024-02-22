@@ -5,7 +5,7 @@ width: 95%;
 height:90%;
 `
 
-export const StethoscopeView = styled.View`
+export const StethoscopeView = styled.TouchableOpacity`
 width: 60px;
 height: 60px;
 border-radius: 5px;

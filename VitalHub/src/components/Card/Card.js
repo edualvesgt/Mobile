@@ -22,12 +22,12 @@ const Card = ({ image, time, status, onPressCard, onPressShow }) => {
             )
         } else if (status === "r") {
             return (
-                <DoubleView style={{ justifyContent: 'space-between' }}>
-                    <RowCardBox>
+                <RowCardBox>
+                    <DoubleView style={{ justifyContent: 'space-between' }}>
                         <StatusGray time={time} />
                         <TextBlue onPress={onPressShow}>Ver Prontuario</TextBlue>
-                    </RowCardBox>
-                </DoubleView>
+                    </DoubleView>
+                </RowCardBox>
 
             )
         } else if (status === "c") {

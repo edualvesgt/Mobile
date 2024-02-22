@@ -34,3 +34,6 @@ const CancelAppointment = ({ isOpen, onClose}) => {
 };
 
 export default CancelAppointment;
+
+
+
