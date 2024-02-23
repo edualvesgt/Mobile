@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.SafeAreaView`
 flex:1;
 align-items:center;
-background-color: #EDEDED;
+background-color: #FFFFFF;
 `
 export const CheckEmail = styled.View`
 margin-top: 20px;

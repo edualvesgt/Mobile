@@ -62,3 +62,7 @@ const Card = ({ image, time, status, onPressCard, onPressShow }) => {
 }
 
 export default Card
+
+
+
+

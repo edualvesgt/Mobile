@@ -28,3 +28,15 @@ export const StatusGray = ({time}) => {
         </CardGray>
     )
 }
+export const StatusCalendar = ({time}) => {
+    return (
+        <CardGray>
+             <AntDesign
+                name="clockcircle"
+                size={14}
+                color={"gray"}
+                />            
+            <TextCardGray>{time}</TextCardGray>
+        </CardGray>
+    )
+}

@@ -31,3 +31,21 @@ export const BoxInputForm = ({ textLabel, placeholder, fieldWidth = 90, fieldHei
         </FieldContent>
     )
 }
+export const BoxInputCreate = ({ textLabel, placeholder, fieldWidth = 90, fieldHeigth, editable = false }) => {
+    return (
+        <FieldContent style={{ alignItems: 'flex-start', width: '100%', backgroundColor: 'white' }}>
+            <Label 
+            style = {{}}
+            textLabel={textLabel} />
+
+            <InputForm
+                style={{ fontSize: 16, marginTop: 10 , marginBottom: 20 ,backgroundColor: 'white'}}
+                editable={editable}
+                fieldHeigth={fieldHeigth}
+                placeholder={placeholder}
+            />
+        </FieldContent>
+    )
+}
+
+

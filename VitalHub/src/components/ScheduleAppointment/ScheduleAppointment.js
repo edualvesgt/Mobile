@@ -1,9 +1,10 @@
 import { Label, Title } from "../Title/StyleTitle";
 import { ModalContainer, ModalContent } from "./StyleScheduleAppointment";
 import { LinkCancel } from "../Links/StyleLink";
-import {  BlueTitle, Button, ButtonTitle, SmallButton } from "../Button/Button";
-import { Input,  } from "../Input/StyleInput";
-import {  RowContainerButton } from "../Container/StyleContainer";
+import { BlueTitle, Button, ButtonTitle, SmallButton } from "../Button/Button";
+import { RowContainerButton } from "../Container/StyleContainer";
+import { BoxInput, BoxInputCreate, BoxInputForm, } from "../BoxInput/BoxInput";
+import { Input } from "../Input/StyleInput";
 
 const ScheduleAppointment = ({ isOpen, onClose }) => {
 
@@ -18,21 +19,25 @@ const ScheduleAppointment = ({ isOpen, onClose }) => {
                 <Title>Agendar Consulta</Title>
 
                 {/* Input Com select */}
-                
-                <TypeAppointment/>
-                {/* Container em row com tres botoes  */}
 
-                {/* escolher sua localidade */}
-                <Input
-                placeholder={"Informe sua Localidade"}
-            />
+                <Label>Qual o nível da consulta</Label>
+                <RowContainerButton>
+                    <SmallButton><BlueTitle>Rotina</BlueTitle></SmallButton>
+                    <SmallButton><BlueTitle>Exames</BlueTitle></SmallButton>
+                    <SmallButton><BlueTitle>Urgencia</BlueTitle></SmallButton>
+                </RowContainerButton>
+
+                <BoxInputCreate
+                    textLabel={"Informe a Localizacao Desejada"}
+                    placeholder={"Informe a localizacao"}
+                />
 
                 {/* botao  */}
                 <Button onPress={onClose} >
                     <ButtonTitle>Confirmar</ButtonTitle>
                 </Button>
                 <LinkCancel onPress={onClose} >Cancelar</LinkCancel>
-            
+
             </ModalContent>
         </ModalContainer>
     );
@@ -42,15 +47,3 @@ const ScheduleAppointment = ({ isOpen, onClose }) => {
 export default ScheduleAppointment;
 
 
-export const TypeAppointment = ({selectedInput = null }) => {
-    return (
-        <>
-            <Label>Qual o nível da consulta</Label>
-            <RowContainerButton>
-                <SmallButton><BlueTitle>Rotina</BlueTitle></SmallButton>
-                <SmallButton><BlueTitle>Exames</BlueTitle></SmallButton>
-                <SmallButton><BlueTitle>Urgencia</BlueTitle></SmallButton>
-            </RowContainerButton>
-        </>
-    )
-}

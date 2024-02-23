@@ -40,6 +40,10 @@ export const Navigation = ({ navigation }) => {
         title="EditFormDoctor"
         onPress={() => navigation.navigate("EditFormDoctor")}
       />
+      <Button
+        title="ChooseClinic"
+        onPress={() => navigation.navigate("ChooseClinic")}
+      />
     </View>
   );
 };

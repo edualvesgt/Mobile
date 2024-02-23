@@ -46,6 +46,12 @@ color: green;
 font-size: 14px;
 font-family: "Quicksand_600SemiBold";
 `
+export const TextYellow = styled(TextCardGreen)`
+font-size: 18px;
+color: #F9A620;
+
+`
+
 export const TextCardGray = styled.Text`
 color: gray;
 font-size: 14px;

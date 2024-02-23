@@ -68,27 +68,27 @@ align-self: flex-start;
 
 
 export const WhiteButton = styled.TouchableHighlight`
-    width: 110px;
-    height: 40px;
+width: 110px;
+height: 40px;
 
-    border: 2px solid #607EC5;
-    border-radius: 5px;
+border: 2px solid #607EC5;
+border-radius: 5px;
 
-    display:flex;
-    justify-content: center;
-    align-items:center;
+display:flex;
+justify-content: center;
+align-items:center;
 `
 
 export const BlueButton = styled.TouchableHighlight`
-    width: 110px;
-    height: 40px;
+width: 110px;
+height: 40px;
 
-    background-color: #607EC5;
-    border-radius: 5px;
+background-color: #607EC5;
+border-radius: 5px;
 
-    display:flex;
-    justify-content: center;
-    align-items:center;
+display:flex;
+justify-content: center;
+align-items:center;
 
 `
 
@@ -104,13 +104,12 @@ font-size: 12px;
 font-family: "MontserratAlternates_600SemiBold";
 `
 export const SmallButton = styled.TouchableOpacity`
-    width: 30%;
-    height: 55px;
-    padding:16px;
-    font-family: "MontserratAlternates_600SemiBold";
-    border:2px solid ${({ pressed }) => (pressed ? "#34898F" : "#49b3ba")};
-    border-radius: 10px;
-    display: flex;
-    align-items:center;
-    background-color: ${({ pressed }) => (pressed ? "#34898F" : "transparent")};
+width: 30%;
+height: 55px;
+padding-top:16px;
+font-family: "MontserratAlternates_600SemiBold";
+border: 2px solid  #60BFC5;
+border-radius: 10px;
+display: flex;
+align-items:center;
 `;

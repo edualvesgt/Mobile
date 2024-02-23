@@ -12,6 +12,7 @@ import { Profile } from './src/screens/Profile/Profile';
 import { FormDoctor } from './src/screens/FormDoctor/FormDoctor';
 import { Home } from './src/screens/Home/Home';
 import { EditFormDoctor } from './src/screens/EditFormDoctor/EditFormDoctor';
+import { ChooseClinic } from './src/screens/ChooseClinic/ChooseClinic';
 
 
 const Stack = createNativeStackNavigator();
@@ -96,6 +97,11 @@ export default function App() {
           name='EditFormDoctor'
           component={EditFormDoctor}
           options={{ title: "EditFormDoctor" }}
+        />
+        <Stack.Screen
+          name='ChooseClinic'
+          component={ChooseClinic}
+          options={{ title: "ChooseClinic" }}
         />
 
       </Stack.Navigator>
