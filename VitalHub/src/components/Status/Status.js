@@ -1,6 +1,7 @@
 import {AntDesign} from '@expo/vector-icons'
-import { TextCardGray, TextCardGreen } from '../Text/Text';
-import { CardGray, CardGreen } from './StyleStatus';
+import {FontAwesome6} from '@expo/vector-icons'
+import { TextCardGray, TextCardGreen, TextCardWater } from '../Text/Text';
+import { CardGray, CardGreen, CardWater } from './StyleStatus';
 
 
 export const StatusGreen = ({time}) => {
@@ -30,13 +31,13 @@ export const StatusGray = ({time}) => {
 }
 export const StatusCalendar = ({time}) => {
     return (
-        <CardGray>
-             <AntDesign
-                name="clockcircle"
+        <CardWater>
+             <FontAwesome6
+                name="calendar-day"
                 size={14}
-                color={"gray"}
+                color={"#49B3BA"}
                 />            
-            <TextCardGray>{time}</TextCardGray>
-        </CardGray>
+            <TextCardWater>{time}</TextCardWater>
+        </CardWater>
     )
 }

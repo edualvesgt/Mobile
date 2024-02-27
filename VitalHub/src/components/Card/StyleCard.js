@@ -16,6 +16,22 @@ gap:10px;
 
 `
 
+export const CardBoxSelected = styled.Touchableopacity`
+box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* Adiciona box-shadow na parte inferior */
+background-color: #FFFFFF;
+width: 98%;
+height: 100px;
+padding: 15px;
+margin-top: 20px;
+border: 2px solid #496BBA;
+display: flex;
+flex-direction: row;
+justify-content:space-between;
+align-items:center;
+gap:10px;
+
+`
+
 
 export const ImageCard = styled.Image`
 width: 80px;

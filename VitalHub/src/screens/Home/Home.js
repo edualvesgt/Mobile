@@ -121,7 +121,7 @@ export const Home = ({ navigation }) => {
                     <FlatContainer
                         data={data}
                         renderItem={({ item }) =>
-                            <Card time={item.time} image={item.image} status={item.status} onPressCard={() => openModal()} onPressShow={() => showForm()} />}
+                        <Card time={item.time} image={item.image} status={item.status} onPressCard={() => openModal()} onPressShow={() => showForm()} />}
                         keyExtractor={item => item.id} />
 
                     <StethoscopeView onPress={() => showSchedule()}>

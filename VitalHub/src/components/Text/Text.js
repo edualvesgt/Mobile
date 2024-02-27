@@ -57,6 +57,11 @@ color: gray;
 font-size: 14px;
 font-family: "Quicksand_600SemiBold";
 `
+export const TextCardWater = styled.Text`
+color: #49B3BA;
+font-size: 14px;
+font-family: "Quicksand_600SemiBold";
+`
 export const TextRed = styled.Text`
 font-size: 12px;
 font-family: "MontserratAlternates_500Medium";

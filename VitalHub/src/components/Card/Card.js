@@ -37,6 +37,9 @@ const Card = ({ image, time, status, onPressCard, onPressShow }) => {
                 </RowCardBox>
             )
         }
+        else {
+            return null;
+        }
     }
 
 

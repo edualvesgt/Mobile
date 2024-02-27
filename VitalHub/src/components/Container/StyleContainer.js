@@ -5,6 +5,11 @@ flex:1;
 align-items:center;
 background-color: #FFFFFF;
 `
+export const ContainerClinic = styled.SafeAreaView`
+flex:1;
+align-items:center;
+background-color: white;
+`
 export const CheckEmail = styled.View`
 margin-top: 20px;
 flex-direction: row;
@@ -49,4 +54,10 @@ margin-top: 10px;
 
 export const FlatContainer = styled.FlatList`
 width: 100%;
+`
+export const FlatListClinic = styled.FlatList`
+width: 100%;
+height: 80%;
+margin: 0 0 20px 10%;
+background-color: white;
 `

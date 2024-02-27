@@ -1,30 +1,60 @@
 import { AntDesign } from '@expo/vector-icons'
 import { TextAbout, TextAccount, TextYellow } from "../Text/Text"
-import { AllStatusBox, CardBoxClinic, TextCardBox } from "./StyleCardClinic"
-import { Text, View } from 'react-native'
+import { AllStatusBox, CardBoxClinic, CardBoxClinicSelected, TextCardBox } from "./StyleCardClinic"
+import { View } from 'react-native'
+import { StatusCalendar } from '../Status/Status'
 
-const CardClinic = () => {
-    return (
-        <CardBoxClinic>
-            
+const CardClinic = ({ time, name, location, review, select , onPress}) => {
+
+    if (select !== name) {
+        return (
+            <CardBoxClinic onPress={onPress}>
+
                 <TextCardBox>
-                    <TextAccount>Clina Natureba</TextAccount>
-                    <TextAbout>Sao Paulo SP </TextAbout>
+                    <TextAccount>{name}</TextAccount>
+                    <TextAbout>{location} </TextAbout>
                 </TextCardBox>
 
                 <AllStatusBox>
-                    <View style = {{flexDirection: "row", alignItems:"center"}}>
-                    <AntDesign
-                        name="star"
-                        size={20}
-                        color={"#F9A620"}
-                    />
-                   <TextYellow>4.5</TextYellow>
+                    <View style={{ flexDirection: "row", alignItems: "center" }}>
+                        <AntDesign
+                            name="star"
+                            size={20}
+                            color={"#F9A620"}
+                        />
+                        <TextYellow>{review}</TextYellow>
                     </View>
+
+                    <StatusCalendar time={time} />
                 </AllStatusBox>
-           
-        </CardBoxClinic>
-    )
+
+            </CardBoxClinic>
+        )
+    } else {
+        return (
+            <CardBoxClinicSelected>
+                <TextCardBox>
+                    <TextAccount>{name}</TextAccount>
+                    <TextAbout>{location} </TextAbout>
+                </TextCardBox>
+
+                <AllStatusBox>
+                    <View style={{ flexDirection: "row", alignItems: "center" }}>
+                        <AntDesign
+                            name="star"
+                            size={20}
+                            color={"#F9A620"}
+                        />
+                        <TextYellow>{review}</TextYellow>
+                    </View>
+
+                    <StatusCalendar time={time} />
+                </AllStatusBox>
+            </CardBoxClinicSelected>
+
+        )
+    }
+
 
 }
 
