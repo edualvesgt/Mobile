@@ -16,10 +16,25 @@ gap:10px;
 
 `
 
-export const CardBoxSelected = styled.Touchableopacity`
-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* Adiciona box-shadow na parte inferior */
+export const CardBoxSelect = styled.TouchableOpacity`
+box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1); /* Adiciona box-shadow na parte inferior */
 background-color: #FFFFFF;
-width: 98%;
+width: 90%;
+height: 100px;
+padding: 15px;
+margin-top: 20px;
+
+display: flex;
+flex-direction: row;
+justify-content:space-between;
+align-items:center;
+gap:10px;
+`
+
+export const CardBoxSelected = styled.TouchableOpacity`
+box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1); /* Adiciona box-shadow na parte inferior */
+background-color: #FFFFFF;
+width: 90%;
 height: 100px;
 padding: 15px;
 margin-top: 20px;

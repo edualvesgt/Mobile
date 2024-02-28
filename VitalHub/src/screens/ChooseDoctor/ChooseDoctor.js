@@ -1,5 +1,4 @@
 import { useState } from "react"
-import Card from "../../components/Card/Card"
 import CardDoctor from "../../components/CardDoctor/CardDoctor"
 import { ContainerClinic, FlatListClinic } from "../../components/Container/StyleContainer"
 import { Title } from "../../components/Title/StyleTitle"
@@ -16,16 +15,24 @@ export const ChooseDoctor = ({ navigation }) => {
             field: "Pediatra"
         },
         {
-            name: "Doutor Eduardo ",
-            field: "Pediatra"
+            name: "Doutor Carlos ",
+            field: "Cardiologista"
         },
         {
-            name: "Doutor Eduardo ",
-            field: "Pediatra"
+            name: "Doutora Ana",
+            field: "Gine"
         },
         {
-            name: "Doutor Eduardo ",
-            field: "Pediatra"
+            name: "Doutor Pedro  ",
+            field: "Geral"
+        },
+        {
+            name: "Doutor Bezerra ",
+            field: "Podologo"
+        },
+        {
+            name: "Doutor Sidao  ",
+            field: "Ortopedista"
         },
         
     ]

@@ -14,6 +14,7 @@ import { Home } from './src/screens/Home/Home';
 import { EditFormDoctor } from './src/screens/EditFormDoctor/EditFormDoctor';
 import { ChooseClinic } from './src/screens/ChooseClinic/ChooseClinic';
 import { ChooseDoctor } from './src/screens/ChooseDoctor/ChooseDoctor';
+import { ChooseData } from './src/screens/ChooseData/ChooseData';
 
 
 const Stack = createNativeStackNavigator();
@@ -108,6 +109,11 @@ export default function App() {
           name='ChooseDoctor'
           component={ChooseDoctor}
           options={{ title: "ChooseDoctor" }}
+        />
+        <Stack.Screen
+          name='ChooseData'
+          component={ChooseData}
+          options={{ title: "ChooseData" }}
         />
 
       </Stack.Navigator>
