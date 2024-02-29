@@ -1,19 +1,18 @@
 import { useState } from "react";
-import { Container } from "../../components/Container/StyleContainer"
-import { Title } from "../../components/Title/StyleTitle"
+import { ContainerClinic } from "../../components/Container/StyleContainer"
+import { Label, Title } from "../../components/Title/StyleTitle"
 import ChooseCalendar from "../../components/ChooseCalendar/ChooseCalendar";
+import { InputSelect } from "../../components/Input/Input";
 
 export const ChooseData = ({ navigation }) => {
 
-    const [selectedDate, setSelectedDate] = useState();
-    const [selectedTime, setSelectedTime] = useState();
     return (
-        <Container>
+        <ContainerClinic>
 
             <Title> Selecionar Data </Title>
-            <ChooseCalendar
-                selectedDate={selectedDate}
-                handleSelectedDateFn={setSelectedDate} />
-        </Container>
+            <ChooseCalendar />
+            <Label>Selecione um horário disponível</Label>
+            <InputSelect />
+        </ContainerClinic>
     )
 }
