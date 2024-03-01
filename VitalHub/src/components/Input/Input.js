@@ -32,6 +32,7 @@ export const InputSelect = () => {
                     color: '#34898F',
                 }}
                 useNativeAndroidPickerStyle={false}
+                enableSwipeMonths
                 style={pickerSelectStyles}
 
                 Icon={() => {
@@ -56,11 +57,11 @@ const pickerSelectStyles = StyleSheet.create({
         fontFamily: 'MontserratAlternates_600SemiBold',
         fontSize: 14,
         padding: 16,
-        display: "flex",
+        marginBottom:42,
+
 
     },
     container: {
-
         width: "90%",
         alignItems: 'center',
         justifyContent: 'center',

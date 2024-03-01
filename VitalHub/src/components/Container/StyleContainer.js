@@ -24,6 +24,15 @@ flex-direction: row;
 justify-content:space-evenly;
 align-items: center;
 `
+
+export const ViewRow = styled(DoubleView)`
+width: 80%;
+border: black;
+align-items: flex-start;
+justify-self: flex-start;
+justify-items: flex-start;
+
+`
 export const InputContainer = styled.View`
 margin: 0px 15px;
 gap:10px;

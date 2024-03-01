@@ -8,6 +8,7 @@ width:${props => `${props.fieldWidth}%`};
 margin-top:20px;
 
 margin-left:35px;
+border:1px solid purple;
 
 `
 export const FieldContentForm = styled.View`

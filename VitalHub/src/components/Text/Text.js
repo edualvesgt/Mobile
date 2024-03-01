@@ -40,7 +40,16 @@ font-size: 14px;
 color: #8C8A97;
 font-family: "Quicksand_500Medium";
 `
-
+export const LabelTextAppointment =styled(TextAccount)`
+color: #33303E;
+font-size: 16px;
+margin-bottom: 8px;
+font-family: "Quicksand_600SemiBold";
+`
+export const TextAppointment = styled(TextAccount)`
+margin-bottom: 20px;
+font-family: "Quicksand_500Medium";
+`
 export const TextCardGreen = styled.Text`
 color: green;
 font-size: 14px;

@@ -15,6 +15,7 @@ import { EditFormDoctor } from './src/screens/EditFormDoctor/EditFormDoctor';
 import { ChooseClinic } from './src/screens/ChooseClinic/ChooseClinic';
 import { ChooseDoctor } from './src/screens/ChooseDoctor/ChooseDoctor';
 import { ChooseData } from './src/screens/ChooseData/ChooseData';
+import { LocalClinic } from './src/screens/LocalClinic/LocalClinic';
 
 
 const Stack = createNativeStackNavigator();
@@ -114,6 +115,11 @@ export default function App() {
           name='ChooseData'
           component={ChooseData}
           options={{ title: "ChooseData" }}
+        />
+        <Stack.Screen
+          name='LocalClinic'
+          component={LocalClinic}
+          options={{ title: "LocalClinic" }}
         />
 
       </Stack.Navigator>

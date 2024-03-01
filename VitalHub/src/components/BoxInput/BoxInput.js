@@ -2,13 +2,15 @@ import { InputForm, InputProfile } from "../Input/StyleInput"
 import { Label } from "../Label/Label"
 import { FieldContent } from "./StyleBox"
 
-export const BoxInput = ({ textLabel, placeholder, fieldWidth = 90, editable = false }) => {
+export const BoxInput = ({ textLabel, placeholder, fieldWidth = 90, editable = false  }) => {
 
     return (
-        <FieldContent fieldWidth={fieldWidth}>
+        
+        <FieldContent fieldWidth={fieldWidth} >
             <Label textLabel={textLabel} />
 
             <InputProfile
+            
                 editable={editable}
                 placeholder={placeholder}
             />
@@ -35,7 +37,7 @@ export const BoxInputCreate = ({ textLabel, placeholder, fieldWidth = 90, fieldH
     return (
         <FieldContent style={{ alignItems: 'flex-start', width: '100%', backgroundColor: 'white' }}>
             <Label 
-            style = {{}}
+            
             textLabel={textLabel} />
 
             <InputForm

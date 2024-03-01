@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { LocaleConfig } from 'react-native-calendars';
-import { StyleSheet } from 'react-native';
 import { Calendar } from 'react-native-calendars';
 
 // Configuração de localização para o idioma inglês
@@ -22,19 +21,32 @@ const ChooseCalendar = () => {
     // Estado para armazenar a data selecionada
     const [selected, setSelected] = useState('')
 
+    const isFutureDate = (dateString) => {
+        const selectedDate = new Date(dateString);
+        const currentDate = new Date();
+        return selectedDate > currentDate;
+    };
+
     return (
         <Calendar
             style={{
                 width: 350,
                 backgroundColor: 'white',
-                marginBottom:5,
+                marginBottom: 5,
             }}
             // Função para atualizar a data selecionada quando um dia é pressionado
+
+            // Função para atualizar a data selecionada quando um dia é pressionado
             onDayPress={day => {
-                setSelected(day.dateString);
+                if (isFutureDate(day.dateString)) {
+                    setSelected(day.dateString);
+                } else {
+                    alert('Por favor, selecione uma data futura.');
+                }
             }}
+
             // Oculta as setas de navegação do calendário
-            hideArrows={true}
+            hideArrows={false}
 
             // Personalização do tema do calendário
             theme={{

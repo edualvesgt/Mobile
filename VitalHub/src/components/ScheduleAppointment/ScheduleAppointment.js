@@ -3,8 +3,8 @@ import { ModalContainer, ModalContent } from "./StyleScheduleAppointment";
 import { LinkCancel } from "../Links/StyleLink";
 import { BlueTitle, Button, ButtonTitle, SmallButton } from "../Button/Button";
 import { RowContainerButton } from "../Container/StyleContainer";
-import { BoxInput, BoxInputCreate, BoxInputForm, } from "../BoxInput/BoxInput";
-import { Input } from "../Input/StyleInput";
+import {  BoxInputCreate,  } from "../BoxInput/BoxInput";
+
 
 const ScheduleAppointment = ({ isOpen, onClose }) => {
 
