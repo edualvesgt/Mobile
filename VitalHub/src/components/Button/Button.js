@@ -112,4 +112,20 @@ border: 2px solid  #60BFC5;
 border-radius: 10px;
 display: flex;
 align-items:center;
-`;
+`
+
+export const ButtonSendPhoto = styled.TouchableOpacity`
+width: 47%;
+height: 44px;
+border-radius:5px;
+/* padding: 12px; */
+background-color: #49B3BA;
+font-family: "MontserratAlternates_600SemiBold";
+font-weight: bold;
+font-size: 14px;
+margin-top: 10px;
+gap: 10px;
+flex-direction:row ;
+justify-content: center;
+align-items: center;
+`

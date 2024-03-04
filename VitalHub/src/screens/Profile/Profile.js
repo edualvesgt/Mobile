@@ -39,12 +39,12 @@ export const Profile = ({ navigate }) => {
 
                 <DoubleView>
                     <BoxInput
-                        fieldWidth={45}
+                        fieldWidth={40}
                         textLabel={"CEP"}
                         placeholder={"00000-00"}
                     />
                     <BoxInput
-                        fieldWidth={38}
+                        fieldWidth={40}
                         textLabel={"Cidade"}
                         placeholder={"Brazolas"}
                     />

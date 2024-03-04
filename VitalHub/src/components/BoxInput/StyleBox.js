@@ -6,9 +6,10 @@ export const FieldContent = styled.View`
 width:${props => `${props.fieldWidth}%`};
 
 margin-top:20px;
+align-self: center;
 
-margin-left:35px;
-border:1px solid purple;
+/* margin-left:35px; */
+/* border:1px solid purple; */
 
 `
 export const FieldContentForm = styled.View`
@@ -16,7 +17,8 @@ export const FieldContentForm = styled.View`
 width:${props => `${props.fieldWidth}%`};
 
 margin-top:20px;
+align-self: center;
 
-margin-left:35px;
+/* margin-left:35px; */
 
 `

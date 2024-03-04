@@ -50,4 +50,18 @@ export const BoxInputCreate = ({ textLabel, placeholder, fieldWidth = 90, fieldH
     )
 }
 
+export const BoxInputPhoto = ({ textLabel, placeholder, fieldWidth = 90, fieldHeigth, editable = false }) => {
+    return (
+        <FieldContent fieldWidth={fieldWidth}>
+            <Label textLabel={textLabel} />
+
+            <InputForm
+                editable={editable}
+                fieldHeigth={fieldHeigth}
+                placeholder={placeholder}
+            />
+        </FieldContent>
+    )
+}
+
 

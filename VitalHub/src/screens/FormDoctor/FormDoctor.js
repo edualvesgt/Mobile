@@ -1,11 +1,13 @@
-import { BoxInputForm } from "../../components/BoxInput/BoxInput"
-import { Button, ButtonTitle } from "../../components/Button/Button"
-import { Container, ContainerForm, InputContainer } from "../../components/Container/StyleContainer"
+import { View } from "react-native"
+import { BoxInputForm, BoxInputPhoto } from "../../components/BoxInput/BoxInput"
+import { Button, ButtonSendPhoto, ButtonTitle } from "../../components/Button/Button"
+import { Container, ContainerForm, DoubleView, HR, InputContainer, TransparentContainer, ViewRow } from "../../components/Container/StyleContainer"
 import { HeaderContainer, HeaderPhoto } from "../../components/HeaderPhoto/HeaderPhoto"
 import { LinkCancel } from "../../components/Links/StyleLink"
-import { TextAccount } from "../../components/Text/Text"
+import { TextAccount, TextRed } from "../../components/Text/Text"
 import { Title } from "../../components/Title/StyleTitle"
 import { ScrollForm } from "../Profile/StyleProfile"
+import { MaterialIcons } from '@expo/vector-icons'
 
 export const FormDoctor = ({ navigation }) => {
     return (
@@ -36,18 +38,46 @@ export const FormDoctor = ({ navigation }) => {
 
 
                     <InputContainer>
-                        {/* <Button>
+                        <Button>
                             <ButtonTitle>Salvar</ButtonTitle>
-                        </Button> */}
+                        </Button>
 
                         <Button>
                             <ButtonTitle onPress={() => navigation.navigate('EditFormDoctor')}>Editar</ButtonTitle>
                         </Button>
 
-                        {/* <LinkCancel >Cancelar</LinkCancel> */}
+                        <LinkCancel >Cancelar</LinkCancel>
+
                     </InputContainer>
 
-                    
+
+
+
+                    {/* Parte adicional do medico  */}
+                    {/* Fazer validacao  */}
+
+
+
+                    <BoxInputPhoto
+                        fieldHeigth={120}
+                        placeholder={"Nenhuma Foto"}
+                        textLabel={"Exames Medicos"} />
+
+                    <ViewRow>
+                        <ButtonSendPhoto>
+                            <ButtonTitle> <MaterialIcons
+                                name="add-a-photo"
+                                size={24}
+                                color={"white"}
+                            /></ButtonTitle>
+                            <ButtonTitle>ENTRAR</ButtonTitle>
+                        </ButtonSendPhoto>
+
+                        <TransparentContainer>
+                            <TextRed>Cancelar</TextRed>
+                        </TransparentContainer>
+                    </ViewRow>
+                    <HR><Title></Title></HR>
                 </ScrollForm>
 
             </ContainerForm>

@@ -73,6 +73,7 @@ font-family: "Quicksand_600SemiBold";
 `
 export const TextRed = styled.Text`
 font-size: 12px;
+/* text-decoration: underline; */
 font-family: "MontserratAlternates_500Medium";
 color: #C81D25;
 

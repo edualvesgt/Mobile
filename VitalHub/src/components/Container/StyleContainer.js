@@ -21,25 +21,32 @@ width: 90%;
 export const DoubleView = styled.View`
 width: 90%;
 flex-direction: row;
-justify-content:space-evenly;
+justify-content:space-between;
 align-items: center;
+align-self: center;
+`
+
+export const ContainerRow = styled(DoubleView)`
+justify-content: center;
 `
 
 export const ViewRow = styled(DoubleView)`
-width: 80%;
-border: black;
-align-items: flex-start;
-justify-self: flex-start;
-justify-items: flex-start;
-
+width: 90%;
+/* border: black; */
+align-self: center;
+justify-self: center;
+justify-content: space-between;
 `
 export const InputContainer = styled.View`
-margin: 0px 15px;
+width: 100%;
+margin-top: 30px;
 gap:10px;
+align-self: center;
 align-items: center;
+
 `
 export const ContainerForm = styled.View`
-width: 110%;
+width: 100%;
 margin-top: 320px;
 align-items: center;
 
@@ -69,4 +76,27 @@ width: 100%;
 height: 80%;
 margin: 0 0 20px 10%;
 background-color: white;
+
 `
+
+export const TransparentContainer = styled.TouchableOpacity`
+background-color: transparent;
+align-items: center;
+justify-content: center;
+/* border: 1px; */
+margin-top: 10px;
+
+width: 40%;
+height: 44px;
+
+text-transform: uppercase;
+font-weight: bold;
+font-size: 18px;
+`
+
+export const HR = styled.View`
+border-bottom: 3px;
+border-color: black ;
+
+`
+

@@ -27,8 +27,9 @@ font-family: "Quicksand_600SemiBold";
 `
 
 export const InputProfile =styled.TextInput.attrs({placeholderTextColor :"#33303E" })`
-width: 90%;
+width: 100%;
 height: 53px;
+margin-top: 10px;
 font-size: 16px;
 font-family: "MontserratAlternates_600SemiBold";
 border-radius: 5px;
@@ -38,7 +39,8 @@ background-color: #F5F3F3;
 `
 export const InputForm =styled.TextInput.attrs({placeholderTextColor :"#34898F" })`
 height:${props => `${props.fieldHeigth}px`};
-width: 90%;
+width: 100%;
+margin-top: 10px;
 /* height: 120px; */
 font-size: 16px;
 font-family: "MontserratAlternates_600SemiBold";
