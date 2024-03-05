@@ -10,7 +10,7 @@ font-family: "MontserratAlternates_600SemiBold";
 export const Label = styled.Text`
 align-self:flex-start;
 margin-top: 25px;
-margin-left: 20px;
+/* margin-left: 20px; */
 font-size: 16px;
 font-family: "Quicksand_600SemiBold";
 `

@@ -60,11 +60,12 @@ margin-top: 40px;
 
 `
 export const RowContainerButton = styled.View`
-width: 90%;
+width: 100%;
 display: flex;
 flex-direction:row;
 gap:15px;
 margin-top: 10px;
+/* border: 1px; */
 `
 
 
@@ -95,8 +96,10 @@ font-size: 18px;
 `
 
 export const HR = styled.View`
-border-bottom: 3px;
-border-color: black ;
-
+border-bottom-color: #8C8A97;
+border-bottom-width: 2px;
+width: 90%;
+margin-top:  20px;
+align-self: center;
 `
 

@@ -21,12 +21,16 @@ export const FormDoctor = ({ navigation }) => {
                 <Title>Richard Kosta</Title>
                 <TextAccount>22 Anos    richard.kosta@gmail.com</TextAccount>
                 <ScrollForm>
+
+                    {/*  Haver Possibilidade troca dos inputs pois ele podem mudar borda e cor */}
                     <BoxInputForm
+                        
                         fieldHeigth={120}
                         textLabel={"Descricao"}
                         placeholder={"Descricao"} />
 
                     <BoxInputForm
+                        // 
                         textLabel={"Diagnostico"}
                         placeholder={"Diagnostico"}
                     />
@@ -77,7 +81,15 @@ export const FormDoctor = ({ navigation }) => {
                             <TextRed>Cancelar</TextRed>
                         </TransparentContainer>
                     </ViewRow>
-                    <HR><Title></Title></HR>
+                    <HR />
+
+                    <BoxInputForm
+
+                        fieldHeigth={120}
+                        placeholder={"Resultado do Exame "}
+                    />
+
+                    <LinkCancel>Voltar</LinkCancel>
                 </ScrollForm>
 
             </ContainerForm>

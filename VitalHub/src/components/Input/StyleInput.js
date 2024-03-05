@@ -16,14 +16,17 @@ font-family:"MontserratAlternates_600SemiBold";
 
 export const InputCheck = styled.TextInput.attrs({placeholderTextColor :"#34898F", })`
 border: 2px solid #77CACF;
-width: 65px;
+width: 18%;
 height: 62px;
+/* gap: 5.66%; */
 border-radius: 5px;
-padding: 5px 19px;
+padding: 5px 18px;
 margin-bottom: 30px;
 color: #34898F ;
 font-size: 40px;
 font-family: "Quicksand_600SemiBold";
+text-align: center;
+
 `
 
 export const InputProfile =styled.TextInput.attrs({placeholderTextColor :"#33303E" })`

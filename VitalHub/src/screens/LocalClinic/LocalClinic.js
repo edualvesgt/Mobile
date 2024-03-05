@@ -1,5 +1,5 @@
 import { BoxInput } from "../../components/BoxInput/BoxInput"
-import { Container, ContainerLocal, DoubleView, ViewRow } from "../../components/Container/StyleContainer"
+import {  ContainerLocal, DoubleView, } from "../../components/Container/StyleContainer"
 import { MapaPhoto } from "../../components/HeaderPhoto/HeaderPhoto"
 import { TextAppointment } from "../../components/Text/Text"
 import { Title } from "../../components/Title/StyleTitle"
@@ -38,3 +38,4 @@ export const LocalClinic = ({ navigation }) => {
 
     )
 }
+
