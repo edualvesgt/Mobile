@@ -50,10 +50,10 @@ export const ChooseDoctor = ({ navigation }) => {
                         field={item.field}
                     />} />
 
-            <Button>
+            <Button onPress={() => navigation.navigate('ChooseData')}>
                 <ButtonTitle>Continuar</ButtonTitle>
             </Button>
-            <LinkCancel onPress={() => navigation.navigate('ChooseClinic')}> Cancelar </LinkCancel>
+            <LinkCancel onPress={() => navigation.navigate('Main')}> Cancelar </LinkCancel>
 
         </ContainerClinic>
     )

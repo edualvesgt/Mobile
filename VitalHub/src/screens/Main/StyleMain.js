@@ -14,4 +14,5 @@ background-color: ${props => `${props.tabBarActiveBackgroundColor}`};
 export const TextIcon = styled.Text`
 font-style: 14px;
 font-family: "Quicksand_500Medium";
+color: #607EC5;
 `

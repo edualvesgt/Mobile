@@ -14,7 +14,7 @@ export const ChooseClinic = ({navigation}) => {
             name: 'Senai Paulo Skaf',
             location: 'São Caetano do Sul, SP',
             time: 'Seg-Sab',
-            review: "5"
+            review: "5.0"
         },
         {
             name: 'Senai Anchieta',
@@ -32,13 +32,13 @@ export const ChooseClinic = ({navigation}) => {
             name: 'Clinica Hitler',
             location: 'São Caetano do Sul, SP',
             time: 'Seg-Dom',
-            review: "5"
+            review: "5.0"
         },
         {
             name: 'Bola De Neve SCS',
             location: 'São Caetano do Sul, SP',
             time: 'Qui-Dom',
-            review: "5"
+            review: "5.0"
         }
     ]
     const [select, setSelected] = useState('')
@@ -59,10 +59,10 @@ export const ChooseClinic = ({navigation}) => {
                         time={item.time}
                     />} />
 
-            <Button >
+            <Button  onPress={() => navigation.navigate('ChooseDoctor')}>
                 <ButtonTitle >Continuar</ButtonTitle>
             </Button>
-            <LinkCancel  onPress={() => navigation.navigate('Home')}> Cancelar </LinkCancel>
+            <LinkCancel  onPress={() => navigation.navigate('Main')}> Cancelar </LinkCancel>
         </ContainerClinic>
     )
 }

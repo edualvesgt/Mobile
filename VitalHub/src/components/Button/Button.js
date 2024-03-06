@@ -8,6 +8,10 @@ padding: 12px 8px;
 background-color: #496BBA;
 margin-top: 15px;
 `
+
+export const ButtonModal = styled(Button)`
+width: 100%;
+`
 export const ButtonForm = styled.TouchableOpacity`
 width: 90%;
 height: 44px;

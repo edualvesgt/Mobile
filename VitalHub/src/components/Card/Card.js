@@ -5,7 +5,7 @@ import { CardBox, ImageCard, RowCardBox, TextCardBox } from "./StyleCard"
 
 
 
-const Card = ({ image, time, status, onPressCard, onPressShow }) => {
+const Card = ({ image, time, status, onPressCard, onPressShow, onPressModal  }) => {
 
 
     const Check = () => {
@@ -44,7 +44,7 @@ const Card = ({ image, time, status, onPressCard, onPressShow }) => {
 
 
     return (
-        <CardBox>
+        <CardBox onPress={onPressShow}>
             <ImageCard source={image} />
 
 

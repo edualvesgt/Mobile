@@ -1,14 +1,14 @@
 import { DoctorPhoto } from "../Logo/StyleLogo";
-import { DataUser, HeaderBox, HeaderContainer, HeaderContent, NameUser, TextDefault, TextHeader } from "./StyleHeader";
+import { DataUser, HeaderBox, HeaderContainer,  NameUser, TextDefault,  } from "./StyleHeader";
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 
-export function Header() {
+export function Header({navigation}) {
     return (
 
 
         <HeaderContainer>
-            <HeaderBox>
+            <HeaderBox onPress = {() => navigation.navigate("Profile")}>
                 <DoctorPhoto source={require("../../assets/PhotoProfile.png")} />
                 <DataUser>
                     <TextDefault>Bem Vindo </TextDefault>

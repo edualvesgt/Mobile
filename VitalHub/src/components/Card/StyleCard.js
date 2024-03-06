@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CardBox = styled.View`
+export const CardBox = styled.TouchableOpacity`
 box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* Adiciona box-shadow na parte inferior */
 background-color: #FFFFFF;
 width: 98%;

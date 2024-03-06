@@ -15,7 +15,7 @@ export const HeaderContent = styled.SafeAreaView`
 margin-top:60px;
 `
 
-export const HeaderBox = styled.View`
+export const HeaderBox = styled.TouchableOpacity`
 width: 45%;
 height: 60px;
 margin-left:20px;

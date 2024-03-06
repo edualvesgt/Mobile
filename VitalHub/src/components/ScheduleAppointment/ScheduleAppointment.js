@@ -1,12 +1,12 @@
 import { Label, Title } from "../Title/StyleTitle";
 import { ModalContainer, ModalContent } from "./StyleScheduleAppointment";
 import { LinkCancel } from "../Links/StyleLink";
-import { BlueTitle, Button, ButtonTitle, SmallButton } from "../Button/Button";
+import { BlueTitle, Button, ButtonModal, ButtonTitle, SmallButton } from "../Button/Button";
 import { RowContainerButton } from "../Container/StyleContainer";
 import {  BoxInputCreate,  } from "../BoxInput/BoxInput";
 
 
-const ScheduleAppointment = ({ isOpen, onClose }) => {
+const ScheduleAppointment = ({ isOpen, onClose, navigation }) => {
 
     if (!isOpen) {
         return null;
@@ -33,9 +33,9 @@ const ScheduleAppointment = ({ isOpen, onClose }) => {
                 />
 
                 {/* botao  */}
-                <Button onPress={onClose} >
+                <ButtonModal onPress = {() => navigation.navigate("ChooseClinic")} >
                     <ButtonTitle>Confirmar</ButtonTitle>
-                </Button>
+                </ButtonModal>
                 <LinkCancel onPress={onClose} >Cancelar</LinkCancel>
 
             </ModalContent>

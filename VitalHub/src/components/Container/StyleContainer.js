@@ -102,4 +102,8 @@ width: 90%;
 margin-top:  20px;
 align-self: center;
 `
-
+export const ContainerLabel = styled.View`
+/* border: 1px; */
+align-items: flex-start;
+width: 90%;
+`

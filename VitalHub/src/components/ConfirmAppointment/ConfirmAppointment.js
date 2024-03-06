@@ -7,7 +7,7 @@ import { LinkCancel } from "../Links/StyleLink";
 import { TextCardBox } from "../Card/StyleCard";
 
 
-const ConfirmAppontment = ({ isOpen, onClose }) => {
+const ConfirmAppontment = ({ isOpen, onClose, navigation }) => {
 
     if (!isOpen) {
         return null;
@@ -39,10 +39,10 @@ const ConfirmAppontment = ({ isOpen, onClose }) => {
                 </TextCardBox>
 
 
-                <Button onPress={onClose} >
+                <Button onPress = {() => navigation.navigate("Main")} >
                     <ButtonTitle>Confirmar</ButtonTitle>
                 </Button>
-                <LinkCancel onPress={onClose} >Cancelar</LinkCancel>
+                <LinkCancel onPress = {() => navigation.navigate("Main")} >Cancelar</LinkCancel>
             </ModalContent>
         </ModalContainer>
     );

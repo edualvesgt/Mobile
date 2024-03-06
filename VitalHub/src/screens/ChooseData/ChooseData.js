@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ContainerClinic } from "../../components/Container/StyleContainer"
+import { ContainerClinic, ContainerLabel } from "../../components/Container/StyleContainer"
 import { Label, Title } from "../../components/Title/StyleTitle"
 import ChooseCalendar from "../../components/ChooseCalendar/ChooseCalendar";
 import { InputSelect } from "../../components/Input/Input";
@@ -24,14 +24,16 @@ export const ChooseData = ({ navigation }) => {
 
             <Title> Selecionar Data </Title>
             <ChooseCalendar />
+            <ContainerLabel>
             <Label>Selecione um horário disponível</Label>
+            </ContainerLabel>
             <InputSelect />
             <Button onPress = {() => openModal()}>
                 <ButtonTitle>Confirmar</ButtonTitle>
             </Button>
-            <LinkCancel>Cancelar</LinkCancel>
+            <LinkCancel onPress = {() => navigation.navigate("Main")}>Cancelar</LinkCancel>
 
-            <ConfirmAppontment isOpen={isModalOpen} onClose={closeModal}/>
+            <ConfirmAppontment isOpen={isModalOpen} onClose={closeModal} navigation={navigation}/>
         </ContainerClinic>
 
     )

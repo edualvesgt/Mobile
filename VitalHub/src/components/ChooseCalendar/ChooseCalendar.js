@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Text } from 'react-native';
 import { LocaleConfig } from 'react-native-calendars';
 import { Calendar } from 'react-native-calendars';
 
@@ -30,9 +31,11 @@ const ChooseCalendar = () => {
     return (
         <Calendar
             style={{
-                width: 350,
+                width: '100%',
+                aspectRatio: 2,
                 backgroundColor: 'white',
-                marginBottom: 5,
+                marginBottom: 180,
+                marginTop: 35,
             }}
             // Função para atualizar a data selecionada quando um dia é pressionado
 
@@ -45,6 +48,8 @@ const ChooseCalendar = () => {
                 }
             }}
 
+            // Substituir o componente de texto padrão por um personalizado para o título do mês (Linha feita com auxilio do GPT)
+            renderHeader={(date) => <Text style={{ fontFamily: 'MontserratAlternates_600SemiBold', fontSize: 18 }}>{date.toString('MMMM yyyy')}</Text>}
             // Oculta as setas de navegação do calendário
             hideArrows={false}
 

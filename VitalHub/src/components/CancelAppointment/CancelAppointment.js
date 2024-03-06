@@ -7,7 +7,7 @@ import { Button, ButtonTitle } from "../Button/Button";
 import { LinkCancel } from "../Links/StyleLink";
 
 
-const CancelAppointment = ({ isOpen, onClose}) => {
+const CancelAppointment = ({ isOpen, onClose, navigation }) => {
 
     if (!isOpen) {
         return null;
@@ -23,10 +23,10 @@ const CancelAppointment = ({ isOpen, onClose}) => {
 
                 <TextForgot>Ao cancelar essa consulta, abrirá uma possível disponibilidade no seu horário, deseja mesmo cancelar essa consulta?</TextForgot>
 
-                <Button onPress={onClose} >
+                <Button onPress = {onClose} >
                     <ButtonTitle>Confirmar</ButtonTitle>
                 </Button>
-                <LinkCancel onPress={onClose} >Cancelar</LinkCancel>
+                <LinkCancel onPress = {onClose}>Cancelar</LinkCancel>
             </ModalContent>
         </ModalContainer>
     );
