@@ -42,15 +42,16 @@ export default function App() {
       {/* Componente de navegacao  */}
       <Stack.Navigator screenOptions={{ headerShown: false }}>
 
-<Stack.Screen
-  name='Login'
-  component={Login}
-  options={{ title: "Login" }}
-/>
+        <Stack.Screen
+          name='Login'
+          component={Login}
+          options={{ title: "Login" }}
+        />
+        
         <Stack.Screen
           name='Main'
           component={Main}
-          // options={{ title: "Main" }}
+        // options={{ title: "Main" }}
         />
 
         {/* <Stack.Screen

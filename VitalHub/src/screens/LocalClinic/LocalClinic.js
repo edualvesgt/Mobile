@@ -1,6 +1,7 @@
 import { BoxInput } from "../../components/BoxInput/BoxInput"
-import {  ContainerLocal, DoubleView, } from "../../components/Container/StyleContainer"
+import { Container, DoubleView } from "../../components/Container/StyleContainer"
 import { MapaPhoto } from "../../components/HeaderPhoto/HeaderPhoto"
+import { LinkCancel } from "../../components/Links/StyleLink"
 import { TextAppointment } from "../../components/Text/Text"
 import { Title } from "../../components/Title/StyleTitle"
 
@@ -8,7 +9,8 @@ export const LocalClinic = ({ navigation }) => {
     return (
         <>
             <MapaPhoto source={require("../../assets/Mapa.png")} />
-            <ContainerLocal>
+
+            <Container>
 
 
                 <Title style={{ marginTop: 30 }}>Clinica Natureba</Title>
@@ -32,7 +34,9 @@ export const LocalClinic = ({ navigation }) => {
                         textLabel={"Bairro"} />
 
                 </DoubleView>
-            </ContainerLocal>
+
+                <LinkCancel style={{ marginTop: 50}} onPress = {() => navigation.replace ("Home")}>Voltar</LinkCancel>
+            </Container>
         </>
 
 

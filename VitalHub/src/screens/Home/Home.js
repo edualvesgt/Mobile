@@ -31,6 +31,7 @@ export const Home = ({ navigation }) => {
         canceladas: false,
     });
 
+    const [profile, setProfile] = useState("Paciente")
     // Define os dados dos itens que serão exibidos
     // Cada item representa uma consulta com um ID, tempo, imagem e status
     const dataItens = [
@@ -86,6 +87,7 @@ export const Home = ({ navigation }) => {
 
     const showForm = () => {
         setIsShow(true)
+
     }
     const closeForm = () => {
         setIsShow(false)
@@ -121,24 +123,25 @@ export const Home = ({ navigation }) => {
                     <FlatContainer
                         data={data}
                         renderItem={({ item }) =>
-                            <Card time={item.time} image={item.image} status={item.status}
+                            <Card time={item.time} image={item.image} status={item.status} navigation={navigation}
                                 onPressCard={() => openModal()} onPressShow={() => showForm()} />}
                         keyExtractor={item => item.id} />
 
-                    <StethoscopeView onPress={() => showSchedule()}>
-                        <FontAwesome
-                            name="stethoscope"
-                            size={32}
-                            color={"white"}
-
-                        />
-                    </StethoscopeView>
+                    {profile === "Paciente" && (
+                        <StethoscopeView onPress={() => showSchedule()}>
+                            <FontAwesome
+                                name="stethoscope"
+                                size={32}
+                                color={"white"}
+                            />
+                        </StethoscopeView>
+                    )}
                 </ScrollForm>
             </Container>
 
             <CancelAppointment isOpen={isModalOpen} onClose={closeModal} navigation={navigation} />
             <ScheduleAppointment isOpen={isModalSchedule} onClose={closeSchedule} navigation={navigation} />
-            <ShowFormDoctor isOpen={isShow} onClose={closeForm} navigation={navigation} />
+            <ShowFormDoctor isOpen={isShow} onClose={closeForm} navigation={navigation} situacion={selected} titleName={"Nome da Pessoa"} about={"Informacoes"} />
         </>
     )
 }

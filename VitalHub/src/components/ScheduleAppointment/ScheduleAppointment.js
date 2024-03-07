@@ -3,7 +3,7 @@ import { ModalContainer, ModalContent } from "./StyleScheduleAppointment";
 import { LinkCancel } from "../Links/StyleLink";
 import { BlueTitle, Button, ButtonModal, ButtonTitle, SmallButton } from "../Button/Button";
 import { RowContainerButton } from "../Container/StyleContainer";
-import {  BoxInputCreate,  } from "../BoxInput/BoxInput";
+import { BoxInputCreate, } from "../BoxInput/BoxInput";
 
 
 const ScheduleAppointment = ({ isOpen, onClose, navigation }) => {
@@ -12,35 +12,44 @@ const ScheduleAppointment = ({ isOpen, onClose, navigation }) => {
         return null;
     }
 
-    return (
-        <ModalContainer>
-            <ModalContent>
-                {/* Titulo agendar  */}
-                <Title>Agendar Consulta</Title>
+const handleConfirm = () => {
+    navigation.navigate("ChooseClinic");
+    onClose();
+};
 
-                {/* Input Com select */}
+<ButtonModal onPress={handleConfirm}>
+    <ButtonTitle>Confirmar</ButtonTitle>
+</ButtonModal>
 
-                <Label>Qual o nível da consulta</Label>
-                <RowContainerButton>
-                    <SmallButton><BlueTitle>Rotina</BlueTitle></SmallButton>
-                    <SmallButton><BlueTitle>Exames</BlueTitle></SmallButton>
-                    <SmallButton><BlueTitle>Urgencia</BlueTitle></SmallButton>
-                </RowContainerButton>
+return (
+    <ModalContainer>
+        <ModalContent>
+            {/* Titulo agendar  */}
+            <Title>Agendar Consulta</Title>
 
-                <BoxInputCreate
-                    textLabel={"Informe a Localizacao Desejada"}
-                    placeholder={"Informe a localizacao"}
-                />
+            {/* Input Com select */}
 
-                {/* botao  */}
-                <ButtonModal onPress = {() => navigation.navigate("ChooseClinic")} >
-                    <ButtonTitle>Confirmar</ButtonTitle>
-                </ButtonModal>
-                <LinkCancel onPress={onClose} >Cancelar</LinkCancel>
+            <Label>Qual o nível da consulta</Label>
+            <RowContainerButton>
+                <SmallButton><BlueTitle>Rotina</BlueTitle></SmallButton>
+                <SmallButton><BlueTitle>Exames</BlueTitle></SmallButton>
+                <SmallButton><BlueTitle>Urgencia</BlueTitle></SmallButton>
+            </RowContainerButton>
 
-            </ModalContent>
-        </ModalContainer>
-    );
+            <BoxInputCreate
+                textLabel={"Informe a Localizacao Desejada"}
+                placeholder={"Informe a localizacao"}
+            />
+
+            {/* botao  */}
+            <ButtonModal onPress={handleConfirm} >
+                <ButtonTitle>Confirmar</ButtonTitle>
+            </ButtonModal>
+            <LinkCancel onPress={onClose} >Cancelar</LinkCancel>
+
+        </ModalContent>
+    </ModalContainer>
+);
 
 };
 

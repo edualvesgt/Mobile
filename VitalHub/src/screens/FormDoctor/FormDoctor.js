@@ -24,7 +24,7 @@ export const FormDoctor = ({ navigation }) => {
 
                     {/*  Haver Possibilidade troca dos inputs pois ele podem mudar borda e cor */}
                     <BoxInputForm
-                        
+
                         fieldHeigth={120}
                         textLabel={"Descricao"}
                         placeholder={"Descricao"} />
@@ -50,7 +50,7 @@ export const FormDoctor = ({ navigation }) => {
                             <ButtonTitle onPress={() => navigation.navigate('EditFormDoctor')}>Editar</ButtonTitle>
                         </Button>
 
-                        <LinkCancel >Cancelar</LinkCancel>
+                        <LinkCancel onPress={() => navigation.replace('Home')}>Cancelar</LinkCancel>
 
                     </InputContainer>
 
@@ -89,7 +89,7 @@ export const FormDoctor = ({ navigation }) => {
                         placeholder={"Resultado do Exame "}
                     />
 
-                    <LinkCancel>Voltar</LinkCancel>
+                    <LinkCancel style={{ textAlign: 'center' }} onPress={() => navigation.replace('Main')}>Voltar</LinkCancel>
                 </ScrollForm>
 
             </ContainerForm>
