@@ -5,7 +5,7 @@ import { StatusGray, StatusGreen } from "../Status/Status"
 import { TextAbout, TextAccount, TextBlue, TextRed } from "../Text/Text"
 import { CardBox, ImageCard, RowCardBox, TextCardBox } from "./StyleCard"
 
-const Card = ({ image, time, status, onPressCard, onPressShow, navigation }) => {
+const Card = ({ image, time, status, onPressCard, onPressShow, navigation, situation }) => {
     const [profile, setProfile] = useState("Paciente");
 
     const Check = () => {
@@ -39,20 +39,28 @@ const Card = ({ image, time, status, onPressCard, onPressShow, navigation }) => 
     }
 
     // Adjusted onPress logic
-    const handleCardPress = () => {
-        if (status === "r") {
-            if (profile === "Paciente") {
-                navigation.replace("FormDoctor");
-            } else {
-                onPressShow();
-            }
-        }else if (status === "c") {
-            onPressShow = null 
-        }
-    };
+    // const handleCardPress = () => {
+    //     if (status === "r") {
+    //         if (profile === "Paciente") {
+    //             navigation.replace("FormDoctor");
+    //         } else {
+    //             onPressShow();
+    //         }
+    //     }else if (status === "c") {
+    //         onPressShow = null 
+    //     }
+    // };
 
     return (
-        <CardBox onPress={status === "r" ? handleCardPress : onPressShow}>
+        <CardBox onPress={() => {
+            if (profile == "Paciente" && situation.realizadas == true) {
+                navigation.replace("FormDoctor");
+            }
+            // Verifica se a situação é cancelada e retorna null para esse caso
+            else if (situation.agendadas == true || situation.realizadas == true ) {
+                onPressShow()
+            }
+        }}>
             <ImageCard source={image} />
             <Container>
                 <TextCardBox>

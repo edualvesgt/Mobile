@@ -123,7 +123,7 @@ export const Home = ({ navigation }) => {
                     <FlatContainer
                         data={data}
                         renderItem={({ item }) =>
-                            <Card time={item.time} image={item.image} status={item.status} navigation={navigation}
+                            <Card situation={selected} time={item.time} image={item.image} status={item.status} navigation={navigation}
                                 onPressCard={() => openModal()} onPressShow={() => showForm()} />}
                         keyExtractor={item => item.id} />
 

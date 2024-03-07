@@ -15,18 +15,8 @@ const ShowFormDoctor = ({ isOpen, onClose, navigation, situacion, titleName, abo
 
     const [profile, setProfile] = useState("Medico");
 
-    // Função para lidar com a pressão do botão "Card/Ver  Prontuario"
-    const handleInsertButtonPress = () => {
-        if (profile === "Paciente") {
-            navigation.replace("FormDoctor");
-        }
-        // Caso contrário, não faz nada.
-    };
+    
 
-    // Verifica se a situação é cancelada e retorna null para esse caso
-    if (situacion.canceladas === true) {
-        return null;
-    }
 
     return (
         <ShowModalContainer>
@@ -40,7 +30,7 @@ const ShowFormDoctor = ({ isOpen, onClose, navigation, situacion, titleName, abo
                         <ButtonTitle>Ver Local Consulta</ButtonTitle>
                     </Button>
                 ) : (
-                    <Button onPress={handleInsertButtonPress}>
+                    <Button>
                         <ButtonTitle>Inserir Prontuario</ButtonTitle>
                     </Button>
                 )}
