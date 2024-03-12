@@ -1,14 +1,16 @@
 import { BoxInput } from "../../components/BoxInput/BoxInput"
 import { Container, DoubleView } from "../../components/Container/StyleContainer"
-import { MapaPhoto } from "../../components/HeaderPhoto/HeaderPhoto"
 import { LinkCancel } from "../../components/Links/StyleLink"
 import { TextAppointment } from "../../components/Text/Text"
 import { Title } from "../../components/Title/StyleTitle"
 
+
+import Map from "../../components/Map/Map"
+
 export const LocalClinic = ({ navigation }) => {
     return (
         <>
-            <MapaPhoto source={require("../../assets/Mapa.png")} />
+            <Map/>
 
             <Container>
 
