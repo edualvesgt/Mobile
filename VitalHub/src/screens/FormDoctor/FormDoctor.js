@@ -10,6 +10,16 @@ import { ScrollForm } from "../Profile/StyleProfile"
 import { MaterialIcons } from '@expo/vector-icons'
 
 export const FormDoctor = ({ navigation }) => {
+
+    const [isCamModalOpen, setIsCamModalOpen] = useState(false);
+
+    const openCamModal = () => {
+        setIsCamModalOpen(true);
+    };
+
+    const closeCamModal = () => {
+        setIsCamModalOpen(false);
+    };
     return (
         <Container>
             <HeaderContainer>
@@ -68,7 +78,7 @@ export const FormDoctor = ({ navigation }) => {
                         textLabel={"Exames Medicos"} />
 
                     <ViewRow>
-                        <ButtonSendPhoto>
+                        <ButtonSendPhoto >
                             <ButtonTitle> <MaterialIcons
                                 name="add-a-photo"
                                 size={24}
@@ -93,6 +103,10 @@ export const FormDoctor = ({ navigation }) => {
                 </ScrollForm>
 
             </ContainerForm>
+
+            <Modal visible={isCamModalOpen} onRequestClose={closeCamModal}>
+                <Cam onClose={closeCamModal} />
+            </Modal>
         </Container>
     )
 }

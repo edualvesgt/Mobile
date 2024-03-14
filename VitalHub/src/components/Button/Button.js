@@ -133,3 +133,7 @@ flex-direction:row ;
 justify-content: center;
 align-items: center;
 `
+
+export const ButtonFlip = styled(Button)`
+background-color: "transparent";
+`

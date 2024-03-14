@@ -57,7 +57,6 @@ export default function Map() {
                 initialPosition != null
                     ? (
                         <MapView
-                            mapType={"standard"} // Pode ser "standard" (normal), "satellite" (satélite), "hybrid" (hibrido) ou "terrain" (terreno)
                             ref={mapReference}
                             style={styles.map}
                             initialRegion={{

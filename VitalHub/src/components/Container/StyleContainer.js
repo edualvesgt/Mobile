@@ -107,3 +107,9 @@ export const ContainerLabel = styled.View`
 align-items: flex-start;
 width: 90%;
 `
+
+export const ContainerCam = styled.View`
+flex: 1;
+width: 100%;
+height: 80%;
+`
