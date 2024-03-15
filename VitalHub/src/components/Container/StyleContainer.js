@@ -29,6 +29,15 @@ align-self: center;
 export const ContainerRow = styled(DoubleView)`
 justify-content: center;
 `
+export const ContainerButtonCam = styled.View`
+
+border: 1px solid black;
+background-color:#0003 ;
+margin-top: 40px;
+width: 100%;
+flex-direction: row;
+justify-content: flex-end; 
+`
 
 export const ViewRow = styled(DoubleView)`
 width: 90%;
@@ -109,7 +118,12 @@ width: 90%;
 `
 
 export const ContainerCam = styled.View`
-flex: 1;
 width: 100%;
 height: 80%;
+margin-top: 15%;
+`
+
+export const ContainerPhoto = styled.View`
+margin: 10px;
+flex-direction: 'row';
 `

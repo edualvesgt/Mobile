@@ -135,5 +135,11 @@ align-items: center;
 `
 
 export const ButtonFlip = styled(Button)`
-background-color: "transparent";
+width: 20%;
+height: auto;
+/* background-color: aqua; */
+background-color: transparent;
+align-items: center;
+justify-content: center;
+border: red 1px solid;
 `
