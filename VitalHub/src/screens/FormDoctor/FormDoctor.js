@@ -12,19 +12,9 @@ import { MaterialIcons } from '@expo/vector-icons'
 import Cam from '../../components/Cam/Cam';
 
 export const FormDoctor = ({ navigation }) => {
-    const [isCamVisible, setIsCamVisible] = useState(false);
-    const openCamModal = () => {
-        setIsCamVisible(true);
-        console.log("Abrirrr");
-        console.log(isCamVisible);
-    };
 
-    const closeCamModal = () => {
-        setIsCamVisible(false);
-        console.log("Fechar");
-        console.log(isCamVisible);
-    };
 
+    const [openModal, setOpenModal] = useState(false);
     return (
         <Container>
             <HeaderContainer>
@@ -71,7 +61,7 @@ export const FormDoctor = ({ navigation }) => {
                         textLabel={"Exames Medicos"} />
 
                     <ViewRow>
-                        <ButtonSendPhoto onPress={openCamModal}>
+                        <ButtonSendPhoto onPress={() => {setOpenModal(true); console.log("OnOpen:::",{openModal});}}>
                             <ButtonTitle>
                                 <MaterialIcons name="add-a-photo" size={24} color={"white"} />
                             </ButtonTitle>
@@ -93,12 +83,12 @@ export const FormDoctor = ({ navigation }) => {
                 </ScrollForm>
             </ContainerForm>
 
-
-            <Modal animationType="slide" transparent={true} visible={isCamVisible} >
-
-                <Cam onClose={closeCamModal} setIsCamVisible={setIsCamVisible} />
+            <Modal animationType="slide" transparent={true} visible={openModal} >
+                <Cam onPress={() => {setOpenModal(false); console.log("OnClose:::",{openModal});}} />
             </Modal>
 
+
         </Container>
+
     )
 }

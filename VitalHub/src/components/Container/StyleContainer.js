@@ -30,13 +30,14 @@ export const ContainerRow = styled(DoubleView)`
 justify-content: center;
 `
 export const ContainerButtonCam = styled.View`
-
-border: 1px solid black;
+//border: 1px solid black;
 background-color:#0003 ;
 margin-top: 40px;
 width: 100%;
 flex-direction: row;
 justify-content: flex-end; 
+gap: 80px;
+
 `
 
 export const ViewRow = styled(DoubleView)`

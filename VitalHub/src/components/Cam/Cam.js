@@ -2,17 +2,20 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as MediaLibrary from 'expo-media-library';
 import { Camera, CameraType } from 'expo-camera';
 
-import { Container, ContainerButtonCam, ContainerCam, ContainerForm, ContainerRow } from '../Container/StyleContainer';
-import { ButtonFlip } from '../Button/Button';
+import { Container, ContainerButtonCam, } from '../Container/StyleContainer';
+import { Button, ButtonFlip } from '../Button/Button';
 import { FontAwesome, MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons'
-import { Alert, Modal } from 'react-native';
+import { Alert, Image, Modal, View } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 
-export default function Cam({ onClose, setIsCamVisible }) {
+export default function Cam({ }) {
     const camRef = useRef(null);
     const [typeCam, setTypeCam] = useState(Camera.Constants.Type.front);
     // Estado para armazenar a foto capturada
     const [photo, setPhoto] = useState(null)
     const [capturePhoto, setCapturePhoto] = useState(null)
+    const [openModal, setOpenModal] = useState(false)
+
 
     useEffect(() => {
         (async () => {
@@ -25,18 +28,21 @@ export default function Cam({ onClose, setIsCamVisible }) {
     // Função assíncrona para capturar a foto
     async function CapturePhoto() {
         if (camRef) {
-            const photo = await cameraRef.current.takePictureAsync();
+            const photo = await camRef.current.takePictureAsync();
             await setCapturePhoto(photo.uri)
             setPhoto(photo.uri)
-            setOpenModal(true)
             console.log(photo);
+            setOpenModal(true)
+
         }
     }
+
 
     // Função assíncrona para limpar a foto
     async function ClearPhoto() {
         setPhoto(null)
         setOpenModal(false)
+
     }
 
     // Função assíncrona para salvar a foto na galeria
@@ -49,44 +55,55 @@ export default function Cam({ onClose, setIsCamVisible }) {
         }
     }
 
-    const handleCloseModal = () => {
-        onClose();
-    };
+
 
     return (
         <Modal
             animationType="slide"
             transparent={false}
             visible={true}
-            onRequestClose={onClose}>
-
-            
-                <Camera
-                    ref={camRef}
-                    type={typeCam}
-                    style={{ flex: 1, justifyContent:'flex-end', }}
-                >
-
-                    <ContainerButtonCam>
-                        {/* Botão para capturar a foto */}
-                        <ButtonFlip onPress={() => CapturePhoto()}>
-                            <FontAwesome name='camera' size={30} color={'#000'} />
-                        </ButtonFlip>
-
-                        <ButtonFlip onPress={() => setTypeCam(typeCam == CameraType.front ? CameraType.back : CameraType.front)}>
-                            <MaterialCommunityIcons name='camera-flip' color={'#000'} size={40} />
-                        </ButtonFlip>
+        >
 
 
+            <Camera
+                ref={camRef}
+                type={typeCam}
+                style={{ flex: 1, justifyContent: 'flex-end', }}
+            >
+
+                <ContainerButtonCam>
+                    {/* Botão para capturar a foto */}
+                    <ButtonFlip onPress={() => CapturePhoto()}>
+                        <FontAwesome name='camera' size={30} color={'#FFF'} />
+                    </ButtonFlip>
+
+                    <ButtonFlip onPress={() => setTypeCam(typeCam == CameraType.front ? CameraType.back : CameraType.front)}>
+                        <MaterialCommunityIcons name='camera-flip' color={'#FFF'} size={40} />
+                    </ButtonFlip>
+                </ContainerButtonCam>
+            </Camera>
+
+            {/* Modal para exibir a foto capturada */}
+            <Modal animationType='slide' transparent={false} visible={photo !== null}>
+                <Container >
+                    {/* Exibir a foto */}
+                    <Image style={{ width: '100%', height: 500, borderRadius: 10 }} source={{ uri: photo }} />
+
+                    {/* Botões para limpar a foto ou salvar na galeria */}
+                    <View style={{ margin: 10, flexDirection: 'row', }}>
+                        <Button onPress={() => { ClearPhoto(); setOpenModal(false) }}>
+                            <FontAwesome name='trash' size={10} color={'#ff0000'} />
+                        </Button>
+
+                        <Button onPress={() => { SavePhoto(); setOpenModal(false) }}>
+                            <FontAwesome name='save' size={10} color={'#121212'} />
+                        </Button>
+                    </View>
+                </Container>
+            </Modal>
 
 
-                    </ContainerButtonCam>
-                </Camera>
 
-
-
-
-         
         </Modal>
     )
 }
