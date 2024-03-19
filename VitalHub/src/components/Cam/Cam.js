@@ -3,7 +3,7 @@ import * as MediaLibrary from 'expo-media-library';
 import { Camera, CameraType } from 'expo-camera';
 
 import { Container, ContainerButtonCam, } from '../Container/StyleContainer';
-import { Button, ButtonFlip } from '../Button/Button';
+import { Button, ButtonFlip, ButtonPhoto } from '../Button/Button';
 import { FontAwesome, MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons'
 import { Alert, Image, Modal, View } from 'react-native';
 import { TouchableOpacity } from 'react-native';
@@ -91,13 +91,13 @@ export default function Cam({ }) {
 
                     {/* Botões para limpar a foto ou salvar na galeria */}
                     <View style={{ margin: 10, flexDirection: 'row', }}>
-                        <Button onPress={() => { ClearPhoto(); setOpenModal(false) }}>
-                            <FontAwesome name='trash' size={10} color={'#ff0000'} />
-                        </Button>
+                        <ButtonPhoto onPress={() => { ClearPhoto(); setOpenModal(false) }}>
+                            <FontAwesome name='trash' size={50} color={'#ff0000'} />
+                        </ButtonPhoto>
 
-                        <Button onPress={() => { SavePhoto(); setOpenModal(false) }}>
-                            <FontAwesome name='save' size={10} color={'#121212'} />
-                        </Button>
+                        <ButtonPhoto onPress={() => { SavePhoto(); setOpenModal(false) }}>
+                            <FontAwesome name='save' size={50} color={'#121212'} />
+                        </ButtonPhoto>
                     </View>
                 </Container>
             </Modal>

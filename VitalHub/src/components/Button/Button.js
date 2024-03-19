@@ -143,3 +143,11 @@ align-items: center;
 justify-content: center;
 /* border: red 1px solid;s */
 `
+
+export const ButtonPhoto = styled.TouchableOpacity`
+padding: 20px;
+border-radius: 15px;
+background-color: 'transparent';
+align-items: "center";
+justify-content: "center";
+`
